@@ -1,0 +1,6 @@
+framework module Pods_Mundus_ios {
+  umbrella header "Pods-Mundus_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
