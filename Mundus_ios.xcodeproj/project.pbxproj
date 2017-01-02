@@ -14,6 +14,8 @@
 		52D930951E083569000D7EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D930931E083569000D7EF1 /* LaunchScreen.storyboard */; };
 		52D930A01E083569000D7EF1 /* Mundus_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9309F1E083569000D7EF1 /* Mundus_iosTests.swift */; };
 		52D930AB1E083569000D7EF1 /* Mundus_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D930AA1E083569000D7EF1 /* Mundus_iosUITests.swift */; };
+		6122B1FC85A8ABF4AF271A96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B7B89AFDBE69566E061B /* Constants.swift */; };
+		6122BCA5453ACAE1F8EC16DC /* AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B9090958C537A8DEF819 /* AdminVC.swift */; };
 		8805AC4BA25054B1435BBA14 /* Pods_Mundus_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF45E8AD94FEF6CDC388043 /* Pods_Mundus_iosTests.framework */; };
 		B15AB4E4CFDD6536353264DE /* Pods_Mundus_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91A05E0CBD0F415C3D578D /* Pods_Mundus_iosUITests.framework */; };
 		C71625EF5AE34DDD73100B15 /* Pods_Mundus_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDF7C4920A9B26471C13EB /* Pods_Mundus_ios.framework */; };
@@ -53,6 +55,8 @@
 		52D930AA1E083569000D7EF1 /* Mundus_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mundus_iosUITests.swift; sourceTree = "<group>"; };
 		52D930AC1E083569000D7EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5500B6A8DA923EF0BDEA966A /* Pods-Mundus_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosTests/Pods-Mundus_iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		6122B7B89AFDBE69566E061B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6122B9090958C537A8DEF819 /* AdminVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminVC.swift; sourceTree = "<group>"; };
 		8351758911D96C99E6507386 /* Pods-Mundus_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		926502BEC3ECE13A8DECFFC2 /* Pods-Mundus_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4EDF7C4920A9B26471C13EB /* Pods_Mundus_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mundus_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,7 @@
 		5249B20F1E094CB900A774FA /* util */ = {
 			isa = PBXGroup;
 			children = (
+				6122B7B89AFDBE69566E061B /* Constants.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				52D930911E083569000D7EF1 /* Assets.xcassets */,
 				52D930931E083569000D7EF1 /* LaunchScreen.storyboard */,
 				52D930961E083569000D7EF1 /* Info.plist */,
+				6122B9090958C537A8DEF819 /* AdminVC.swift */,
 			);
 			path = Mundus_ios;
 			sourceTree = "<group>";
@@ -488,6 +494,8 @@
 			files = (
 				52D9308D1E083569000D7EF1 /* ViewController.swift in Sources */,
 				52D9308B1E083569000D7EF1 /* AppDelegate.swift in Sources */,
+				6122B1FC85A8ABF4AF271A96 /* Constants.swift in Sources */,
+				6122BCA5453ACAE1F8EC16DC /* AdminVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

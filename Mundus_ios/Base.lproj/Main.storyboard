@@ -68,11 +68,30 @@
                     </view>
                     <connections>
                         <outlet property="inputToken" destination="sTo-C9-tj3" id="i4l-XM-jUF"/>
+                        <segue destination="he0-1U-Zc9" kind="show" identifier="adminSegue" id="eTK-VE-shY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--AdminVC-->
+        <scene sceneID="1DJ-66-L5T">
+            <objects>
+                <viewController id="he0-1U-Zc9" customClass="AdminVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WTw-Pf-E4l"/>
+                        <viewControllerLayoutGuide type="bottom" id="maV-lD-qXu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1GJ-lH-bkf" customClass="ADmin">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwS-Gn-qRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="142"/>
         </scene>
     </scenes>
     <resources>
