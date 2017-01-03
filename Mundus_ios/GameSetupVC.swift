@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameSetupVC.swift
 //  Mundus_ios
 //
 //  Created by Stephan on 19/12/2016.
@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class GameSetupVC: UIViewController {
     @IBOutlet weak var inputToken: UITextField!
 
     let BASE_API_URL : String = "http://192.168.0.75:4567/"
@@ -18,7 +18,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        postToken()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,25 +26,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func postToken() -> Void {
-        let headers : HTTPHeaders = [
-            "Authorization": (UIDevice.current.identifierForVendor?.uuidString)!
-        ]
-        Alamofire.request(BASE_API_URL + "token", method: .post, headers: headers).responseJSON { response in
 
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                let dict = JSON as! NSDictionary
-                let token = dict.object(forKey: "token")!
-                let deviceId = dict.object(forKey: "deviceID")!
-                let stringCombine = "\(deviceId):\(token)"
-                self.userDefaults.set(stringCombine, forKey: "auth")
-                
-                print("JSON: \(JSON)")
-            }
-        }
-    }
 
     @IBAction func createGame(_ sender: Any) {
         let alert = UIAlertController(title: "Naam", message: "Kies alstublieft een naam", preferredStyle: .alert)
@@ -86,6 +67,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func joinGame(_ sender: Any) {
+        self.performSegue(withIdentifier: "adminSegue", sender: nil)
 
         let parameters: Parameters = [
                 "deviceID": (UIDevice.current.identifierForVendor?.uuidString)!,

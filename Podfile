@@ -1,5 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/makchich/aldo-specs-repo.git'
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
 target 'Mundus_ios' do
@@ -7,6 +9,8 @@ target 'Mundus_ios' do
   use_frameworks!
 	pod 'Alamofire', '~> 4.0'
 	pod 'Starscream', '~> 2.0.0'
+    pod "Aldo"
+    pod "SwiftSpinner"
 
   # Pods for Mundus_ios
   target 'Mundus_iosTests' do

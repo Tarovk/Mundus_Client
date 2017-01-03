@@ -1,15 +1,22 @@
 PODS:
   - Alamofire (4.2.0)
+  - Aldo (0.1.0):
+    - Alamofire (~> 4.0)
   - Starscream (2.0.2)
+  - SwiftSpinner (1.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Aldo
   - Starscream (~> 2.0.0)
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Aldo: b571c0e85c8a11c72567cbcd037d1d997f4b75e5
   Starscream: 6c135a34e0a6e60cedaa0b30db67a4c05cf7cd38
+  SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
 
-PODFILE CHECKSUM: bad671060c68f6ec4fc543acabfdf2f4a64b86ec
+PODFILE CHECKSUM: 168c5b301a008bb5b210aee4ccf124cce3bd7e61
 
 COCOAPODS: 1.1.1

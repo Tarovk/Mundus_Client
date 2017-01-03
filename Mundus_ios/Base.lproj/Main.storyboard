@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nJ6-da-g2v">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TokenVC-->
+        <scene sceneID="f3N-Jv-kjN">
+            <objects>
+                <viewController id="nJ6-da-g2v" customClass="TokenVC" customModule="Mundus_ios" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ce8-gy-XJK"/>
+                        <viewControllerLayoutGuide type="bottom" id="kRa-AP-Zz4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="byL-Sz-3mN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen1" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-uy-0QW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F0S-uy-0QW" firstAttribute="top" secondItem="Ce8-gy-XJK" secondAttribute="bottom" id="INT-lg-kwh"/>
+                            <constraint firstAttribute="trailing" secondItem="F0S-uy-0QW" secondAttribute="trailing" id="JxD-mb-vqv"/>
+                            <constraint firstItem="F0S-uy-0QW" firstAttribute="leading" secondItem="byL-Sz-3mN" secondAttribute="leading" id="Ssm-oo-0sO"/>
+                            <constraint firstItem="kRa-AP-Zz4" firstAttribute="top" secondItem="F0S-uy-0QW" secondAttribute="bottom" id="p8R-j7-5fU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="retrievedToken" id="O9r-OV-fct"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCK-VL-m3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815.20000000000005" y="141.67916041979012"/>
+        </scene>
+        <!--Game SetupVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameSetupVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,49 +53,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen1" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-uy-0QW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo_mundus" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-He-o9D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyU-L0-z7R">
-                                <rect key="frame" x="142" y="384" width="90" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyU-L0-z7R">
+                                <rect key="frame" x="203" y="372" width="90" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Join Game"/>
                                 <connections>
                                     <action selector="joinGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXB-tc-niO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-OR-iQ6">
-                                <rect key="frame" x="136" y="303" width="102" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-OR-iQ6">
+                                <rect key="frame" x="78" y="372" width="102" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Create Game"/>
                                 <connections>
                                     <action selector="createGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgY-P9-Ycn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-C9-tj3">
-                                <rect key="frame" x="139" y="433" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-C9-tj3">
+                                <rect key="frame" x="139" y="293" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="trailing" secondItem="uzh-OR-iQ6" secondAttribute="trailing" id="0Bb-EQ-gbd"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="trailing" secondItem="jyU-L0-z7R" secondAttribute="trailing" id="2wQ-5L-gU5"/>
-                            <constraint firstItem="F0S-uy-0QW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Emw-YQ-sEU"/>
-                            <constraint firstItem="F0S-uy-0QW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IKi-GL-cuk"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lv5-7H-Jco"/>
-                            <constraint firstAttribute="trailing" secondItem="F0S-uy-0QW" secondAttribute="trailing" id="M5Z-kg-0Fv"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="leading" secondItem="uzh-OR-iQ6" secondAttribute="leading" id="NGF-jy-GoK"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="top" secondItem="uzh-OR-iQ6" secondAttribute="bottom" constant="55" id="Po1-TX-5fL"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="leading" secondItem="jyU-L0-z7R" secondAttribute="leading" id="Tfb-hi-hMj"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k5m-TL-X9Z"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mX4-GU-raY"/>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sGJ-2P-dps"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="top" secondItem="jyU-L0-z7R" secondAttribute="bottom" constant="19" id="yTO-sc-I5s"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F0S-uy-0QW" secondAttribute="bottom" id="yo0-t1-RMD"/>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="279" id="zNo-K3-ZIe"/>
+                            <constraint firstItem="nwe-He-o9D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1n7-mB-tYu"/>
+                            <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="105.5" id="5f6-8x-BC9"/>
+                            <constraint firstItem="nwe-He-o9D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6D8-F7-kXA"/>
+                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-67.5" id="Bcq-hQ-dyu"/>
+                            <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="105.5" id="Kqb-oW-4uo"/>
+                            <constraint firstAttribute="trailing" secondItem="nwe-He-o9D" secondAttribute="trailing" id="ZRS-Zk-UXb"/>
+                            <constraint firstItem="sTo-C9-tj3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="58" id="tmM-YW-ycA"/>
+                            <constraint firstItem="nwe-He-o9D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wM4-yO-lsd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="109.59999999999999" y="141.67916041979012"/>
         </scene>
         <!--AdminVC-->
         <scene sceneID="1DJ-66-L5T">
@@ -95,6 +120,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo_mundus" width="550" height="366"/>
         <image name="screen1" width="691" height="926"/>
     </resources>
 </document>

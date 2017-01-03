@@ -11,12 +11,14 @@ import Starscream
 
 class AdminVC: UIViewController, WebSocketDelegate {
     let socket = WebSocket(url: URL(string: "ws://expeditionmundus.herokuapp.com/echo")!)
+    let userDefaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("llolO")
 
         self.socket.delegate = self
         self.socket.disableSSLCertValidation = true
+        self.socket.headers["Authorization"] = userDefaults.object(forKey : "auth") as! String
 
         self.socket.connect()
         // Do any additional setup after loading the view.
@@ -42,14 +44,6 @@ class AdminVC: UIViewController, WebSocketDelegate {
     func websocketDidReceiveData(socket: WebSocket, data: Data) {
         print("got some data: \(data.count)")
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
