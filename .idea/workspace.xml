@@ -25,17 +25,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameSetupVC.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameSetupVC.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="1020">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
                 <element signature="e#136#148#0" expanded="true" />
-                <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-                <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-                <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-                <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -44,19 +40,21 @@
       <file leaf-file-name="Podfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Podfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TokenVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TokenVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mundus_ios/TokenVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="645">
+              <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+              <folding>
+                <marker date="1483526896000" expanded="true" signature="509:756" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,9 +102,9 @@
         <option value="$PROJECT_DIR$/Mundus_ios/Info.plist" />
         <option value="$PROJECT_DIR$/Mundus_ios/AdminVC.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/ViewController.swift" />
-        <option value="$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift" />
-        <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/Mundus_ios/TokenVC.swift" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift" />
       </list>
     </option>
   </component>
@@ -256,6 +254,7 @@
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Mundus_ios" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenVC.swift&#10;to&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenRouter.swift" />
+    <property name="OverrideImplement.combined" value="true" />
   </component>
   <component name="RunManager" selected="Application.Mundus_ios">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Mundus_ios" TARGET_NAME="Mundus_ios" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Mundus_ios" RUN_TARGET_NAME="Mundus_ios" MAKE_ACTIVE="TRUE">
@@ -299,11 +298,11 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18176943" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295562" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288757" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17236255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30163446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -346,10 +345,6 @@
           <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -402,10 +397,6 @@
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -458,10 +449,6 @@
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -515,10 +502,6 @@
           <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -555,10 +538,6 @@
           <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -578,10 +557,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -618,10 +593,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -670,6 +641,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/TokenVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+          <folding>
+            <marker date="1483526896000" expanded="true" signature="509:756" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -682,31 +671,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="1020">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
-            <marker date="1483477206000" expanded="true" signature="203:2894" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="746:1410" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="1460:2176" ph="{...}" />
-            <marker date="1483477206000" expanded="true" signature="2221:2892" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/TokenVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>

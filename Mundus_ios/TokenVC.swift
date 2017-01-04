@@ -15,17 +15,31 @@ import Aldo
 class TokenVC: UIViewController, Callback {
     
     var progress = 0.0
-    let BASE_API_URL : String = "http://192.168.0.75:4567/"
+    let BASE_API_URL : String = "http://192.168.0.75/"
 
 
     
     func onResponse(responseCode: Int, response: Any) {
-        
+        print(response)
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if(UserDefaults.standard.object(forKey : "auth") != nil) {
+            self.performSegue(withIdentifier: "retrievedToken", sender: nil)
+            print("ok")
+        } else {
+            print("niet ok")
+            postToken()
+        }
+//    Aldo.setHostAddress(address: BASE_API_URL, port: 4567)
+//        Aldo.requestAuthToken(callback: self)
+//        print("ok")
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        postToken()
+
     }
 
     func postToken() -> Void {

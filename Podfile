@@ -11,6 +11,7 @@ target 'Mundus_ios' do
 	pod 'Starscream', '~> 2.0.0'
     pod "Aldo"
     pod "SwiftSpinner"
+  pod 'Toaster', '~> 2.0'
 
   # Pods for Mundus_ios
   target 'Mundus_iosTests' do

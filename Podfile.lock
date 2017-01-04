@@ -4,19 +4,22 @@ PODS:
     - Alamofire (~> 4.0)
   - Starscream (2.0.2)
   - SwiftSpinner (1.1.0)
+  - Toaster (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Aldo
   - Starscream (~> 2.0.0)
   - SwiftSpinner
+  - Toaster (~> 2.0)
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Aldo: b571c0e85c8a11c72567cbcd037d1d997f4b75e5
   Starscream: 6c135a34e0a6e60cedaa0b30db67a4c05cf7cd38
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
+  Toaster: be65cd48e93a525b2a9cc4bd25a2bfc900e02d9f
 
-PODFILE CHECKSUM: 168c5b301a008bb5b210aee4ccf124cce3bd7e61
+PODFILE CHECKSUM: 8322f466da97c5a8558069c0fbbd8343ae70504f
 
 COCOAPODS: 1.1.1
