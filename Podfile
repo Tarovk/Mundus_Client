@@ -7,12 +7,12 @@ platform :ios, '9.0'
 target 'Mundus_ios' do
   # Comment the next line if you're not using Swift and don't want to use dynamic 
   use_frameworks!
-	pod 'Alamofire', '~> 4.0'
 	pod 'Starscream', '~> 2.0.0'
-    pod "Aldo"
+  pod 'Aldo',  '~> 0.3.4'
     pod "SwiftSpinner"
-  pod 'Toaster', '~> 2.0'
+  pod 'SKPhotoBrowser'
 
+  pod "Toaster"
   # Pods for Mundus_ios
   target 'Mundus_iosTests' do
     inherit! :search_paths

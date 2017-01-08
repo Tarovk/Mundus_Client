@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="222" id="KGk-i7-Jjw" customClass="AdminQuestionCell" customModule="Mundus_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="492" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="492" height="221.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAa-fi-PCn" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
+                        <rect key="frame" x="18" y="18" width="456" height="186"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-ZD-C4k">
+                                <rect key="frame" x="228" y="156" width="228" height="30"/>
+                                <color key="backgroundColor" red="0.90201735496520996" green="0.059020614711909475" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Weiger">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMy-I9-NAm">
+                                <rect key="frame" x="0.0" y="155" width="228" height="30"/>
+                                <color key="backgroundColor" red="0.16244309872575521" green="0.72336632013320923" blue="0.25357748311548828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Accepteer"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groepje1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-hC-Pxa">
+                                <rect key="frame" x="10" y="10" width="87" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Omdat ze geel zijn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-Xp-6do">
+                                <rect key="frame" x="157.5" y="28" width="141.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waarom zijn bananen krom?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG1-MK-met">
+                                <rect key="frame" x="121" y="98" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Mvj-ZD-C4k" secondAttribute="bottom" id="3Jq-4W-kQX"/>
+                            <constraint firstItem="eG1-MK-met" firstAttribute="centerX" secondItem="ZAa-fi-PCn" secondAttribute="centerX" id="7ZX-Ow-4DB"/>
+                            <constraint firstItem="eG1-MK-met" firstAttribute="top" secondItem="mH3-hC-Pxa" secondAttribute="bottom" constant="60.5" id="9fm-A2-DQe"/>
+                            <constraint firstAttribute="bottom" secondItem="UMy-I9-NAm" secondAttribute="bottom" id="BJq-Ic-yyv"/>
+                            <constraint firstItem="mH3-hC-Pxa" firstAttribute="leading" secondItem="ZAa-fi-PCn" secondAttribute="leading" constant="10" id="DxW-7k-H7s"/>
+                            <constraint firstItem="mH3-hC-Pxa" firstAttribute="top" secondItem="ZAa-fi-PCn" secondAttribute="top" constant="10" id="GVv-ga-xs5"/>
+                            <constraint firstItem="Mvj-ZD-C4k" firstAttribute="leading" secondItem="UMy-I9-NAm" secondAttribute="trailing" id="Gm3-pX-WJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="Mvj-ZD-C4k" secondAttribute="trailing" id="UUx-fC-kln"/>
+                            <constraint firstItem="pNC-Xp-6do" firstAttribute="top" secondItem="eG1-MK-met" secondAttribute="bottom" constant="3.5" id="Vzi-Ni-cMx"/>
+                            <constraint firstItem="mH3-hC-Pxa" firstAttribute="leading" secondItem="ZAa-fi-PCn" secondAttribute="leading" constant="10" id="YZI-2f-FeG"/>
+                            <constraint firstItem="Mvj-ZD-C4k" firstAttribute="leading" secondItem="UMy-I9-NAm" secondAttribute="trailing" id="YdJ-wi-MrW"/>
+                            <constraint firstItem="UMy-I9-NAm" firstAttribute="leading" secondItem="ZAa-fi-PCn" secondAttribute="leading" id="lem-n4-mXN"/>
+                            <constraint firstItem="pNC-Xp-6do" firstAttribute="centerX" secondItem="ZAa-fi-PCn" secondAttribute="centerX" id="maP-Kn-e9M"/>
+                            <constraint firstItem="UMy-I9-NAm" firstAttribute="width" secondItem="Mvj-ZD-C4k" secondAttribute="width" id="wl2-av-gq5"/>
+                            <constraint firstItem="eG1-MK-met" firstAttribute="width" secondItem="pNC-Xp-6do" secondAttribute="width" id="yIj-8j-EeF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZAa-fi-PCn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="7pc-4B-Ujb"/>
+                    <constraint firstItem="ZAa-fi-PCn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Tkq-Hi-nUi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZAa-fi-PCn" secondAttribute="trailing" constant="10" id="gXp-7n-xbZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ZAa-fi-PCn" secondAttribute="bottom" constant="10" id="pBz-pi-fGX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answer" destination="pNC-Xp-6do" id="V7o-fX-vGI"/>
+                <outlet property="playerName" destination="mH3-hC-Pxa" id="WqP-7L-Ab0"/>
+                <outlet property="question" destination="eG1-MK-met" id="CKa-4c-n89"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="-82"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -8,92 +8,104 @@
 
 import UIKit
 import Alamofire
+import Aldo
 import Toaster
 
 
 class GameSetupVC: UIViewController {
 
     @IBOutlet weak var inputName: UITextField!
-    let BASE_API_URL : String = "http://192.168.0.75:4567/"
-    var auth_token : String = ""
-    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    var items = NSDictionary()
+//    let BASE_API_URL : String = "https://expeditionmundus.herokuapp.com"
+
+    private class CreateGameSessionCallback : Callback{
+        private var viewController : GameSetupVC
+
+         public init(viewController: GameSetupVC) {
+             self.viewController = viewController
+        }
+        func onResponse(responseCode: Int, response: NSDictionary) {
+            if(responseCode == 200) {
+                print("meeeh")
+                viewController.succesfullCreate(response: response)
+            }
+        }
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    private class JoinSessionCallback : Callback{
+        private var viewController : GameSetupVC
+        
+        public init(viewController: GameSetupVC) {
+            self.viewController = viewController
+        }
+        func onResponse(responseCode: Int, response: NSDictionary) {
+            print("jaja")
+            print(response)
+            if(responseCode == 200) {
+                print("meeeh")
+                print(response)
+                viewController.succesfullJoin(response: response)
+            } else {
+                Toast(text: response.object(forKey: "halt") as! String).show()
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-            // Do any additional setup after loading the view, typically from a nib.
-        
-        // Dispose of any resources that can be recreated.
+    public func succesfullCreate(response:NSDictionary) {
+        items = response
+        indicator.stopAnimating()
+        performSegue(withIdentifier: "adminSegue", sender: nil)
     }
 
     @IBAction func createGame(_ sender: Any) {
-
-        print(UserDefaults.standard.object(forKey: "auth") as! String)
         if(!nameIsEmpty()) {
             self.indicator.startAnimating()
-            let headers : HTTPHeaders = [
-                    "Authorization": UserDefaults.standard.object(forKey : "auth") as! String
-            ]
-
-            Alamofire.request(BASE_API_URL + "createSession/username/" + inputName.text!, method: .post, headers : headers).responseJSON { response in
-                        print(response.result)   // result of response serialization
-
-                        if let result = response.result.value {
-                            let JSON = result as! NSDictionary
-
-
-                            print("JSON: \(JSON)")
-                            self.indicator.stopAnimating()
-                            self.performSegue(withIdentifier: "adminSegue", sender: nil)
-                        }
-                    }
+            Aldo.createSession(username: inputName.text!, callback: CreateGameSessionCallback(viewController: self))
         }
-
     }
+
     func nameIsEmpty() -> Bool {
         if(inputName.text!.isEmpty) {
             Toast(text: "Vul alstublieft een naam in").show()
-
             return true;
         }
         return false;
     }
+
     @IBAction func joinGame(_ sender: Any) {
-        let alert = UIAlertController(title: "Join token", message: "Vul de token in", preferredStyle: .alert)
-        alert.addTextField { (textField) in
-            textField.text = ""
+        if(!nameIsEmpty()){
+            self.indicator.startAnimating()
+            let alert = UIAlertController(title: "Join token", message: "Vul de token in", preferredStyle: .alert)
+            alert.addTextField { (textField) in
+                textField.text = ""
+            }
+            var textString = ""
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                let textField = alert!.textFields![0]
+                textString = textField.text!
+                Aldo.joinSession(username: self.inputName.text!, token: textString, callback: JoinSessionCallback(viewController: self))
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
-        var textString = ""
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert!.textFields![0]
-            textString = textField.text!
-            print("Text field: \(textField.text)")
-            self.createJoinRequest(textString: textString)
-        }))
-
-        self.present(alert, animated: true, completion: nil)
-
     }
 
-    func createJoinRequest(textString : String) {
-        let parameters: Parameters = [
-                "deviceID": (UIDevice.current.identifierForVendor?.uuidString)!,
-                "token": auth_token,
-                "joinToken": textString
-        ]
-        Alamofire.request(BASE_API_URL + "session/join", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-                    print(response.result)   // result of response serialization
-
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
-                    }
-                }
+    override func prepare(`for` segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "adminSegue" {
+            let Pr : UITabBarController = segue.destination as! UITabBarController
+            var dashBoard: AdminDashBoard = Pr.viewControllers![0] as! AdminDashBoard
+            dashBoard.items = items
+            dashBoard.usname = inputName.text!
+        }
+        super.prepare(`for`: segue, sender: sender)
     }
+
+    //Callback
+    func succesfullJoin(response:NSDictionary){
+        self.indicator.stopAnimating()
+        performSegue(withIdentifier: "playerSegue", sender: nil)
+    }
+
+
 }
 
