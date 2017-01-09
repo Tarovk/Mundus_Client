@@ -39,6 +39,7 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         }
         // 2. create PhotoBrowser Instance, and present from your viewController.
         browser = SKPhotoBrowser(photos: images)
+        SKPhotoBrowserOptions.displayAction = false
         browser.delegate = self
 
     }
