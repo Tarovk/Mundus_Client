@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.2.0)
-  - Aldo (0.3.4):
+  - Aldo (0.5.0):
     - Alamofire (~> 4.0)
   - SKPhotoBrowser (4.0.0)
   - Starscream (2.0.2)
@@ -8,20 +8,30 @@ PODS:
   - Toaster (2.0.1)
 
 DEPENDENCIES:
-  - Aldo (~> 0.3.4)
+  - Aldo (from `https://github.com/makchich/aldo-api-client-library-ios.git`, branch `develop`)
   - SKPhotoBrowser
   - Starscream (~> 2.0.0)
   - SwiftSpinner
   - Toaster
 
+EXTERNAL SOURCES:
+  Aldo:
+    :branch: develop
+    :git: https://github.com/makchich/aldo-api-client-library-ios.git
+
+CHECKOUT OPTIONS:
+  Aldo:
+    :commit: 81a5a2d9b9a1681e28bea78b56076c3f67472ab0
+    :git: https://github.com/makchich/aldo-api-client-library-ios.git
+
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  Aldo: 006c6ea4af422ada021836b388b0816feafca869
+  Aldo: 4ae4a95fa2bc25c359478ab1129ad9d0e76bade8
   SKPhotoBrowser: bc33eca22f4abd6b99d8d260509ca30c01752a87
   Starscream: 6c135a34e0a6e60cedaa0b30db67a4c05cf7cd38
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   Toaster: be65cd48e93a525b2a9cc4bd25a2bfc900e02d9f
 
-PODFILE CHECKSUM: 3d8f576a61e7361ba24b4a18dfe566ac785eed2e
+PODFILE CHECKSUM: ced4089b759d48d8fae426490dbf9ea13e7e2463
 
 COCOAPODS: 1.1.1

@@ -9,36 +9,68 @@
 import UIKit
 import SKPhotoBrowser
 
-class SourcesVC: UIViewController {
+class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
 
+    private let numberOfItemsPerRow : CGFloat = 3.0
+    private let padding : CGFloat = 8.0
+    private let amountImg :Int = 30
+    private var browser = SKPhotoBrowser()
+
+    var images = [SKPhoto]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        var images = [SKPhoto]()
-        let photo = SKPhoto.photoWithImage(UIImage(named: "file-page1")!)
-        images.append(photo)
-        
-        // 2. create PhotoBrowser Instance, and present from your viewController.
-        let browser = SKPhotoBrowser(photos: images)
-        browser.initializePageIndex(0)
-        self.navigationController?.pushViewController(browser, animated: true)
-
-        // Do any additional setup after loading the view.
+        let width = (UIScreen.main.bounds.width - padding) / numberOfItemsPerRow
+        let layout = collectionViewLayout as!UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width  * sqrt(2.0), height: width)
     }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        tabBarItem = UITabBarItem(title: "Sources", image: UIImage(named: "sources"), tag: 1)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        for index in 1...amountImg {
+            print("file-page\(index)")
+            let photo = SKPhoto.photoWithImage(UIImage(named: "file-page\(index)")!)
+            images.append(photo)
+        }
+        // 2. create PhotoBrowser Instance, and present from your viewController.
+        browser = SKPhotoBrowser(photos: images)
+        browser.delegate = self
+
+    }
+
+    override func numberOfSections(`in` collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return amountImg
     }
-    */
+
+    private struct Storyboard
+    {
+        static let CellIdentifier = "imagecell"
+    }
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! ImgCell
+        cell.imgg = UIImage(named: "file-page\(indexPath.item + 1)")
+        return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        browser.initializePageIndex(indexPath.item)
+        self.present(browser, animated: true, completion: {})
+    }
+
 
 }

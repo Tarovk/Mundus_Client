@@ -23,7 +23,7 @@ class SessionPlayersTVC: UITableViewController {
         super.init(coder: aDecoder)
 
         // Initialize Tab Bar Item
-        tabBarItem = UITabBarItem(title: "Deelnemers", image: UIImage(named: "players"), tag: 1)
+        tabBarItem = UITabBarItem(title: "Players", image: UIImage(named: "players"), tag: 1)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellDataArrray.count

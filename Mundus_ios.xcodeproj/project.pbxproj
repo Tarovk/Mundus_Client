@@ -26,6 +26,7 @@
 		6122BBFC7C6ADB4BE044CB90 /* SessionPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B64A295A195BDEBC18C1 /* SessionPlayerCell.swift */; };
 		6122BC2B9151F41B5A24F431 /* AdminQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B5021B813FD758F64FFF /* AdminQuestionCell.swift */; };
 		6122BCA5453ACAE1F8EC16DC /* AdminQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B9090958C537A8DEF819 /* AdminQuestionsVC.swift */; };
+		6122BD8CB98B1D76ECEF89DC /* ImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B6A6135493CD82BE71DF /* ImgCell.swift */; };
 		8805AC4BA25054B1435BBA14 /* Pods_Mundus_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF45E8AD94FEF6CDC388043 /* Pods_Mundus_iosTests.framework */; };
 		B15AB4E4CFDD6536353264DE /* Pods_Mundus_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91A05E0CBD0F415C3D578D /* Pods_Mundus_iosUITests.framework */; };
 		C71625EF5AE34DDD73100B15 /* Pods_Mundus_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EDF7C4920A9B26471C13EB /* Pods_Mundus_ios.framework */; };
@@ -72,6 +73,7 @@
 		6122B5021B813FD758F64FFF /* AdminQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminQuestionCell.swift; sourceTree = "<group>"; };
 		6122B5FBAA39C44FF034BC88 /* SessionPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionPlayerCell.xib; sourceTree = "<group>"; };
 		6122B64A295A195BDEBC18C1 /* SessionPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPlayerCell.swift; sourceTree = "<group>"; };
+		6122B6A6135493CD82BE71DF /* ImgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCell.swift; sourceTree = "<group>"; };
 		6122B6F43BA90C943C5223AD /* AdminQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminQuestionCell.xib; sourceTree = "<group>"; };
 		6122B7B89AFDBE69566E061B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6122B9090958C537A8DEF819 /* AdminQuestionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminQuestionsVC.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				6122B64A295A195BDEBC18C1 /* SessionPlayerCell.swift */,
 				6122B5021B813FD758F64FFF /* AdminQuestionCell.swift */,
 				527F995C1E1DD35600A04EF5 /* CardView.swift */,
+				6122B6A6135493CD82BE71DF /* ImgCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				6122B8C43D3A279EEC526942 /* AdminDashBoard.swift in Sources */,
 				6122BBFC7C6ADB4BE044CB90 /* SessionPlayerCell.swift in Sources */,
 				6122BC2B9151F41B5A24F431 /* AdminQuestionCell.swift in Sources */,
+				6122BD8CB98B1D76ECEF89DC /* ImgCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

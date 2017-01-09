@@ -46,7 +46,7 @@ class AdminDashBoard: UIViewController, Callback {
 //        Aldo.deleteSession(callback: self)
     }
     
-    func onResponse(responseCode: Int, response: NSDictionary) {
+    func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         print("jaja")
         print(responseCode)
         if(responseCode == 200) {

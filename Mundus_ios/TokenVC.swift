@@ -15,7 +15,7 @@ import Aldo
 class TokenVC: UIViewController, Callback {
     let BASE_API_URL : String = "https://expeditionmundus.herokuapp.com"
 
-    func onResponse(responseCode: Int, response: NSDictionary) {
+    func onResponse(request : String, responseCode: Int, response: NSDictionary) {
         print(responseCode)
         if(responseCode == 200) {
             SwiftSpinner.setTitleFont(nil)
