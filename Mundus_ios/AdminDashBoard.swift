@@ -9,63 +9,73 @@ import Aldo
 import UIKit
 
 class AdminDashBoard: UIViewController, Callback {
-    var items = NSDictionary()
 
+    @IBOutlet weak var gameStateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var adminToken: UILabel!
     @IBOutlet weak var userJoinToken: UILabel!
     @IBOutlet weak var username: UILabel!
-    var usname = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("lolol")
-        print(items.object(forKey: "userToken"))
-        print(items)
-        username.text = usname
-        userJoinToken.text = items.object(forKey: "userToken") as! String
-        adminToken.text = items.object(forKey: "modToken") as! String
-        // Do any additional setup after loading the view.
+
+        styleButton()
+        let session : AldoSession = Aldo.getStoredSession()!
+        username.text = session.getUsername()
+        userJoinToken.text =  session.getUserToken()
+        adminToken.text = session.getModToken()
+    }
+
+    func styleButton() {
+        deleteButton.layer.cornerRadius = 5
+        gameStateButton.layer.cornerRadius = 5
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-        // Initialize Tab Bar Item
         tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "dashboard"), tag: 0)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
-    @IBAction func deleteClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: {});
-
-//        Aldo.deleteSession(callback: self)
-    }
-    
-    func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print("jaja")
-        print(responseCode)
-        if(responseCode == 200) {
-            print("meeeh")
-            print(response)
-            self.dismiss(animated: true, completion: {});
-
+    @IBAction func changeStateClicked(_ sender: Any) {
+        if(gameStateButton.titleLabel!.text! == "Play") {
+            Aldo.changeSessionState(newState: AldoSession.State.PLAY, callback: self)
+        } else if(gameStateButton.titleLabel!.text! == "Pause") {
+            Aldo.changeSessionState(newState: AldoSession.State.PAUSE, callback: self)
         }
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func deleteClicked(_ sender: Any) {
+        Aldo.deleteSession(callback: self)
+        self.dismiss(animated: true, completion: {});
     }
-    */
+    
+    func onResponse(request: String, responseCode: Int, response: NSDictionary) {
+        if(responseCode == 200) {
+            switch request {
+
+            case Regex(pattern: AldoRequest.SESSION_STATE_PLAY.regex()):
+                gameStateButton.titleLabel!.text! = "Pause"
+                gameStateButton.backgroundColor = UIColor.orange
+                print("play worked")
+                break
+
+            case Regex(pattern: AldoRequest.SESSION_STATE_PAUSE.regex()):
+                gameStateButton.titleLabel!.text! = "Play"
+                gameStateButton.backgroundColor = UIColor.green
+                print("pauze worked")
+                break
+            case Regex(pattern: AldoRequest.SESSION_DELETE.regex()):
+                print("delete done")
+                self.dismiss(animated: true, completion: {});
+            break;
+            default:
+                break
+            }
+        }
+    }
 
 }

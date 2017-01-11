@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="302" id="KGk-i7-Jjw" customClass="UserQuestionCell" customModule="Mundus_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="488" height="302"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="488" height="302"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68l-rj-fRn" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
+                        <rect key="frame" x="18" y="18" width="452" height="266"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-HY-CBn">
+                                <rect key="frame" x="10" y="10" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-1V-5I9" customClass="PlaceholderTextView" customModule="Mundus_ios" customModuleProvider="target">
+                                <rect key="frame" x="10" y="41" width="432" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Please fill in your answer here."/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNL-Iu-Xq2">
+                                <rect key="frame" x="164" y="218" width="124" height="38"/>
+                                <color key="backgroundColor" red="0.14086417648898833" green="0.76467322335025378" blue="0.31449689226857303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Submit Answer"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Vu-Vm-sc5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dt-b0-dfc">
+                                <rect key="frame" x="389" y="10" width="53" height="21"/>
+                                <color key="backgroundColor" red="0.14086417649999999" green="0.76467322339999999" blue="0.3144968923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="Active">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79607843140000001" green="0.72156862749999995" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6dt-b0-dfc" firstAttribute="top" secondItem="68l-rj-fRn" secondAttribute="top" constant="10" id="3lW-ma-ocz"/>
+                            <constraint firstItem="KtU-HY-CBn" firstAttribute="top" secondItem="68l-rj-fRn" secondAttribute="top" constant="10" id="ByJ-b4-k7o"/>
+                            <constraint firstItem="KtU-HY-CBn" firstAttribute="leading" secondItem="68l-rj-fRn" secondAttribute="leading" constant="10" id="FCm-E0-kUU"/>
+                            <constraint firstItem="Sn1-1V-5I9" firstAttribute="top" secondItem="6dt-b0-dfc" secondAttribute="bottom" constant="10" id="HIZ-Dh-mF1"/>
+                            <constraint firstItem="MNL-Iu-Xq2" firstAttribute="centerX" secondItem="68l-rj-fRn" secondAttribute="centerX" id="Icx-Bh-1Tk"/>
+                            <constraint firstItem="Sn1-1V-5I9" firstAttribute="top" secondItem="KtU-HY-CBn" secondAttribute="bottom" constant="10" id="IuS-5f-uz0"/>
+                            <constraint firstAttribute="trailing" secondItem="6dt-b0-dfc" secondAttribute="trailing" constant="10" id="KrB-7y-PLV"/>
+                            <constraint firstItem="MNL-Iu-Xq2" firstAttribute="top" secondItem="Sn1-1V-5I9" secondAttribute="bottom" constant="10" id="Tx6-Yx-yu6"/>
+                            <constraint firstItem="Sn1-1V-5I9" firstAttribute="leading" secondItem="68l-rj-fRn" secondAttribute="leading" constant="10" id="aFY-tI-wwe"/>
+                            <constraint firstAttribute="trailing" secondItem="Sn1-1V-5I9" secondAttribute="trailing" constant="10" id="fM8-ru-Uip"/>
+                            <constraint firstAttribute="bottom" secondItem="MNL-Iu-Xq2" secondAttribute="bottom" constant="10" id="ytM-8O-5LG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="68l-rj-fRn" secondAttribute="trailing" constant="10" id="5BT-c1-7di"/>
+                    <constraint firstItem="68l-rj-fRn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="FT1-uc-rc0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="68l-rj-fRn" secondAttribute="bottom" constant="10" id="Nsq-FE-puH"/>
+                    <constraint firstItem="68l-rj-fRn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="TNo-ar-Xeb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answer" destination="Sn1-1V-5I9" id="BCZ-mT-wVP"/>
+                <outlet property="indicatorLabel" destination="6dt-b0-dfc" id="pBK-5L-qfe"/>
+                <outlet property="question" destination="KtU-HY-CBn" id="e6k-zw-tiJ"/>
+                <outlet property="submitButton" destination="MNL-Iu-Xq2" id="lHc-Pc-0f7"/>
+            </connections>
+            <point key="canvasLocation" x="-280" y="-159"/>
+        </tableViewCell>
+    </objects>
+</document>

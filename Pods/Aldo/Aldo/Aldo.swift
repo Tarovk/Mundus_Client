@@ -24,12 +24,25 @@ public enum AldoRequest: String {
     case PLAYER_ALL = "/player/all"
     case PLAYER_INFO = "/player"
     case PLAYER_USERNAME_UPDATE = "/player/username/%@"
+    
+    public func regex() -> String {
+        switch self {
+        case .SESSION_CREATE:
+            return String(format: self.rawValue, "(.)+?")
+        case .SESSION_JOIN:
+            return String(format: self.rawValue, "(.)+?", "(.)+?")
+        case .PLAYER_USERNAME_UPDATE:
+            return String(format: self.rawValue, "(.)+?")
+        default:
+            return self.rawValue
+        }
+    }
 }
 
 open class Aldo {
     
     private static let storage = UserDefaults.standard
-    enum Keys: String {
+    public enum Keys: String {
         case AUTH_TOKEN = "AUTH_TOKEN"
         case SESSION = "SESSION"
     }
@@ -52,7 +65,7 @@ open class Aldo {
         return storage.object(forKey: Keys.SESSION.rawValue) != nil
     }
     
-    class func getStorage() -> UserDefaults {
+    public class func getStorage() -> UserDefaults {
         return storage
     }
     
@@ -79,7 +92,7 @@ open class Aldo {
             "Authorization": "\(ID)\(token)\(player)"
         ]
         
-        Alamofire.request("\(HOST_ADDRESS)\(command)", method: method, parameters: parameters, headers: headers).responseJSON { response in
+        let r = Alamofire.request("\(HOST_ADDRESS)\(command)", method: method, parameters: parameters, encoding: AldoEncoding(), headers: headers).responseJSON { response in
             
             var result: NSDictionary = [:]
             if let JSON = response.result.value {

@@ -8,6 +8,7 @@ target 'Mundus_ios' do
   pod 'Aldo', :git => 'https://github.com/makchich/aldo-api-client-library-ios.git', :branch => 'develop'
     pod "SwiftSpinner"
   pod 'SKPhotoBrowser'
+  pod 'netfox', :git => 'https://github.com/kasketis/netfox.git', :branch => 'swift3'
 
   pod "Toaster"
   # Pods for Mundus_ios

@@ -33,7 +33,6 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         super.viewDidAppear(animated)
 
         for index in 1...amountImg {
-            print("file-page\(index)")
             let photo = SKPhoto.photoWithImage(UIImage(named: "file-page\(index)")!)
             images.append(photo)
         }
