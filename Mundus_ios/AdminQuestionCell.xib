@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAa-fi-PCn" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
-                        <rect key="frame" x="18" y="18" width="456" height="259.5"/>
+                        <rect key="frame" x="18" y="18" width="456" height="260"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groepje1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-hC-Pxa">
-                                <rect key="frame" x="378" y="10" width="68" height="20.5"/>
+                                <rect key="frame" x="378" y="10" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-ZD-C4k">
-                                <rect key="frame" x="187.5" y="219.5" width="81" height="30"/>
+                                <rect key="frame" x="188" y="220" width="81" height="30"/>
                                 <color key="backgroundColor" red="0.90201735496520996" green="0.059020614711909475" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -51,10 +51,10 @@
                                 </state>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-GD-rbc" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
-                                <rect key="frame" x="10" y="41" width="436" height="168.5"/>
+                                <rect key="frame" x="10" y="41" width="436" height="169"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Omdat ze geel zijn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-Xp-6do">
-                                        <rect key="frame" x="10" y="10" width="141.5" height="20.5"/>
+                                        <rect key="frame" x="10" y="10" width="142" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMy-I9-NAm">
-                                <rect key="frame" x="276" y="219.5" width="81" height="30"/>
+                                <rect key="frame" x="276" y="220" width="81" height="30"/>
                                 <color key="backgroundColor" red="0.16244309872575521" green="0.72336632013320923" blue="0.25357748311548828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
