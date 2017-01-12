@@ -15,20 +15,13 @@ class UserQuestionVC: UITableViewController, Callback {
     var questions : NSMutableArray = NSMutableArray()
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
-        print(response)
         if(responseCode == 200) {
             switch request {
             case MundusRequest.REQUEST_ASSIGNED.rawValue:
                 questions = (response.object(forKey: "questions") as! NSArray).mutableCopy() as! NSMutableArray
-                print(questions.count)
+                
                 if(questions.count < 3) {
-                    for i in questions.count...3 {
-
-                        Requests.getQuestion(callback: self)
-                    }
-                } else {
-                    self.tableView.reloadData()
+                    Requests.getQuestion(callback: self)
                 }
                 break;
             default:
@@ -36,6 +29,7 @@ class UserQuestionVC: UITableViewController, Callback {
                 break;
             }
         }
+        self.tableView.reloadData()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -48,7 +42,6 @@ class UserQuestionVC: UITableViewController, Callback {
 
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
-        print("get q's")
         Requests.getAssignedQuestions(callback: self)
     }
 

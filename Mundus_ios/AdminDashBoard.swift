@@ -50,10 +50,10 @@ class AdminDashBoard: UIViewController, Callback {
 
     @IBAction func deleteClicked(_ sender: Any) {
         Aldo.deleteSession(callback: self)
-        self.dismiss(animated: true, completion: {});
     }
     
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
+        print(responseCode)
         if(responseCode == 200) {
             switch request {
 
@@ -70,6 +70,7 @@ class AdminDashBoard: UIViewController, Callback {
                 break
             case Regex(pattern: AldoRequest.SESSION_DELETE.regex()):
                 print("delete done")
+                print(Aldo.hasSession())
                 self.dismiss(animated: true, completion: {});
             break;
             default:

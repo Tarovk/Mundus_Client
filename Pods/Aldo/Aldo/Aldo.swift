@@ -31,6 +31,8 @@ public enum AldoRequest: String {
             return String(format: self.rawValue, "(.)+?")
         case .SESSION_JOIN:
             return String(format: self.rawValue, "(.)+?", "(.)+?")
+        case .SESSION_INFO:
+            return "\(self.rawValue)$"
         case .PLAYER_USERNAME_UPDATE:
             return String(format: self.rawValue, "(.)+?")
         default:
@@ -92,8 +94,7 @@ open class Aldo {
             "Authorization": "\(ID)\(token)\(player)"
         ]
         
-        let r = Alamofire.request("\(HOST_ADDRESS)\(command)", method: method, parameters: parameters, encoding: AldoEncoding(), headers: headers).responseJSON { response in
-            
+        Alamofire.request("\(HOST_ADDRESS)\(command)", method: method, parameters: parameters, encoding: AldoEncoding(), headers: headers).responseJSON { response in
             var result: NSDictionary = [:]
             if let JSON = response.result.value {
                 result = JSON as! NSDictionary

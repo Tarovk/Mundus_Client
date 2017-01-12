@@ -13,15 +13,15 @@ public enum MundusRequest: String {
     case REQUEST_PUBLICATIONS = "/Aldo/publications"
     case REQUEST_ASSIGNED = "/Aldo/assigned"
     case REQUEST_PLAYER_PUBLICATIONS = "/Aldo/players"
-    case REQUEST_SUBMIT_ANSWER = "/Aldo/question/B8/answer"
+    case REQUEST_SUBMIT_ANSWER = "/Aldo/question/%@/answer"
 
 }
 
 open class Requests {
 
     open class func submitQuestion(callback: Callback? = nil, answer : String, questionId: String) {
-//        let command:String = String(format: MundusRequest.REQUEST_SUBMIT_ANSWER.rawValue, questionId)
-        Aldo.request(command: MundusRequest.REQUEST_SUBMIT_ANSWER.rawValue, method: .post, parameters: ["answer" : "lol"], callback: callback)
+        let command: String = String(format: MundusRequest.REQUEST_SUBMIT_ANSWER.rawValue, questionId)
+        Aldo.request(command: command, method: .post, parameters: ["answer" : answer], callback: callback)
     }
 
     open class func getQuestion(callback: Callback? = nil) {
@@ -33,12 +33,10 @@ open class Requests {
     }
 
     open class func getAssignedQuestions(callback: Callback? = nil) {
-        print("fifusjf")
         Aldo.request(command: MundusRequest.REQUEST_ASSIGNED.rawValue, method: .get, parameters: [:], callback: callback)
     }
 
    open class func getPubPlayers(callback: Callback? = nil) {
-        print("eeeee")
         Aldo.request(command: MundusRequest.REQUEST_PLAYER_PUBLICATIONS.rawValue, method: .get, parameters: [:], callback: callback)
     }
 

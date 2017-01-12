@@ -55,14 +55,14 @@ public class AldoMainCallback: Callback {
             case Regex(pattern: AldoRequest.SESSION_INFO.regex()):
                 break
             case Regex(pattern: AldoRequest.SESSION_PLAYERS.regex()):
-                
                 break
             case Regex(pattern: AldoRequest.SESSION_STATE_PLAY.regex()):
                 break
             case Regex(pattern: AldoRequest.SESSION_STATE_PAUSE.regex()):
                 break
-            case Regex(pattern: AldoRequest.SESSION_DELETE.regex()):
+            case AldoRequest.SESSION_DELETE.regex():
                 Aldo.getStorage().removeObject(forKey: Aldo.Keys.SESSION.rawValue)
+                Aldo.getStorage().synchronize()
                 break
             case Regex(pattern: AldoRequest.PLAYER_ALL.regex()):
                 break

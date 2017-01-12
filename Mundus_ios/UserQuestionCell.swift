@@ -8,6 +8,7 @@
 
 import UIKit
 import Aldo
+import Alamofire
 
 class UserQuestionCell: UITableViewCell, Callback {
 
@@ -24,7 +25,6 @@ class UserQuestionCell: UITableViewCell, Callback {
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         print(responseCode)
-        print("jjajajaja")
         print(response)
     }
 
@@ -35,7 +35,6 @@ class UserQuestionCell: UITableViewCell, Callback {
     }
 
     @IBAction func buttonClicked(_ sender: Any) {
-        print("kilkkie")
-        Requests.submitQuestion(answer: answer.text,questionId: questionId)
+        Requests.submitQuestion(callback: self, answer: answer.text,questionId: questionId)
     }
 }

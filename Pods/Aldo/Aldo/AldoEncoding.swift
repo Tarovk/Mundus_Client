@@ -14,6 +14,8 @@ struct AldoEncoding: ParameterEncoding {
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()
         
+        if urlRequest.httpMethod != HTTPMethod.get.rawValue {
+        
         guard let parameters = parameters else { return urlRequest }
         
         do {
@@ -21,13 +23,15 @@ struct AldoEncoding: ParameterEncoding {
             
             if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//                urlRequest.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
             }
             
             urlRequest.httpBody = data
+            //"answer=ok".data(using: .utf8, allowLossyConversion: false)
         } catch {
             throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
         }
-        
+        }
         return urlRequest
     }
 }
