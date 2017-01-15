@@ -21,6 +21,7 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         super.viewDidLoad()
         let width = (UIScreen.main.bounds.width - padding) / numberOfItemsPerRow
         let layout = collectionViewLayout as!UICollectionViewFlowLayout
+        self.collectionView!.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         layout.itemSize = CGSize(width: width  * sqrt(2.0), height: width)
         let adjustForTabbarInsets: UIEdgeInsets = UIEdgeInsetsMake(self.tabBarController!.tabBar.frame.height, 0, 0, 0);
         edgesForExtendedLayout = []

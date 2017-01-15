@@ -47,6 +47,7 @@ class UserQuestionVC: UITableViewController, Callback {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         tableView.allowsSelection = false;
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")

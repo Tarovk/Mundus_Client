@@ -27,18 +27,19 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
             questions = (response.object(forKey: "answers") as! NSArray).mutableCopy() as! NSMutableArray
             print(questions)
             self.tableView.reloadData()
-            if questions.count == 0 {
-                print("heleaal nix")
-                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-                label.text             = "No questions need reviewing"
-                label.textColor        = UIColor.black
-                label.textAlignment    = .center
-                tableView.backgroundView = label
-                tableView.separatorStyle = .none
-            } else {
-                tableView.separatorStyle = .singleLine
-                tableView.backgroundView = nil
-            }
+//            if questions.count == 0 {
+//                print("heleaal nix")
+//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//                label.text             = "No questions need reviewing"
+//                label.textColor        = UIColor.black
+//                label.textAlignment    = .center
+//                let imageView : UIImageView =  UIImageView(image: UIImage(named: "lightwood"))
+//                tableView.backgroundView = label
+//                tableView.separatorStyle = .none
+//            } else {
+//                tableView.separatorStyle = .singleLine
+//                tableView.backgroundView = nil
+//            }
         }
     }
 
@@ -82,6 +83,7 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         tableView.allowsSelection = false;
         Requests.getSubmittedQuestions(callback: self)
         edgesForExtendedLayout = []

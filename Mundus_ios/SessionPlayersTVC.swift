@@ -44,6 +44,7 @@ class SessionPlayersTVC: UITableViewController, Callback {
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl!.addTarget(self, action: "refresh", for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl!)
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
     }
 

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -120,7 +119,7 @@
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.79607843137254897" green="0.72156862745098038" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uzh-OR-iQ6" firstAttribute="top" secondItem="jyU-L0-z7R" secondAttribute="bottom" constant="15" id="0t4-ws-uz7"/>
                             <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="17E-Pm-IDL"/>
@@ -214,13 +213,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bs-4M-cEO" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
-                                <rect key="frame" x="26" y="30" width="333" height="400"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightwood" translatesAutoresizingMaskIntoConstraints="NO" id="3Y3-WF-kLv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bs-4M-cEO" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
+                                <rect key="frame" x="26" y="30" width="333" height="287"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-L5-xLl">
-                                        <rect key="frame" x="10" y="10" width="313" height="380"/>
-                                        <color key="backgroundColor" red="0.79607843140000001" green="0.72156862749999995" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <mutableString key="text">Millions of kilometres from Earth, the spaceship Explora is speeding through the universe. â€¨â€¨It is quiet on board. 
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-L5-xLl">
+                                        <rect key="frame" x="10" y="10" width="313" height="267"/>
+                                        <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <string key="text">Millions of kilometres from Earth, the spaceship Explora is speeding through the universe. â€¨â€¨It is quiet on board. 
 
 The three passengers are asleep. Suddenly, a bell starts to ring in the control room. A text appears on one of the computer screens: â€˜planet_in_sightâ€™.
 
@@ -332,13 +334,13 @@ The creatures make a sign with their  ngers â€“ a sort of trian- gle. Sara caref
 
 Nothing happens. The crea- tures stop a short distance away.
  
-Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€™</mutableString>
+Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€™</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.79607843140000001" green="0.72156862749999995" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="3GR-L5-xLl" secondAttribute="bottom" constant="10" id="5Go-Rg-42i"/>
                                     <constraint firstAttribute="trailing" secondItem="3GR-L5-xLl" secondAttribute="trailing" constant="10" id="IfW-en-sBe"/>
@@ -346,9 +348,9 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                     <constraint firstItem="3GR-L5-xLl" firstAttribute="leading" secondItem="7Bs-4M-cEO" secondAttribute="leading" constant="10" id="yix-Dx-5my"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-dc-zJh">
-                                <rect key="frame" x="155.5" y="445" width="63" height="28"/>
-                                <color key="backgroundColor" red="0.79607843140000001" green="0.72156862749999995" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-dc-zJh">
+                                <rect key="frame" x="155.5" y="332" width="63" height="28"/>
+                                <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Skip &gt;&gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -357,8 +359,8 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                     <action selector="skipClicked:" destination="1x8-qw-zN6" eventType="touchUpInside" id="0nH-Tm-gdV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="file-page1" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-qD-Opu">
-                                <rect key="frame" x="72" y="519" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file-page1" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-qD-Opu">
+                                <rect key="frame" x="26" y="370" width="323" height="287"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -369,8 +371,12 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                             <constraint firstItem="Nj1-qD-Opu" firstAttribute="top" secondItem="mdu-dc-zJh" secondAttribute="bottom" constant="10" id="QH8-nn-KzZ"/>
                             <constraint firstItem="mdu-dc-zJh" firstAttribute="centerX" secondItem="Wx0-6A-j62" secondAttribute="centerX" id="S1a-Bh-R4m"/>
                             <constraint firstItem="7Bs-4M-cEO" firstAttribute="top" secondItem="Q5q-na-ner" secondAttribute="bottom" constant="10" id="TTE-Pc-AC1"/>
+                            <constraint firstItem="3Y3-WF-kLv" firstAttribute="leading" secondItem="Wx0-6A-j62" secondAttribute="leading" id="Ude-VJ-Ru4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nj1-qD-Opu" secondAttribute="trailing" constant="10" id="WPv-ya-kcv"/>
+                            <constraint firstItem="yj7-WF-CCh" firstAttribute="top" secondItem="3Y3-WF-kLv" secondAttribute="bottom" id="Wnc-dD-TRq"/>
+                            <constraint firstItem="3Y3-WF-kLv" firstAttribute="top" secondItem="Wx0-6A-j62" secondAttribute="top" id="ZN0-Uv-MJG"/>
                             <constraint firstItem="yj7-WF-CCh" firstAttribute="top" secondItem="Nj1-qD-Opu" secondAttribute="bottom" constant="10" id="b3G-jl-7hd"/>
+                            <constraint firstAttribute="trailing" secondItem="3Y3-WF-kLv" secondAttribute="trailing" id="lJK-kq-ue1"/>
                             <constraint firstItem="mdu-dc-zJh" firstAttribute="top" secondItem="7Bs-4M-cEO" secondAttribute="bottom" constant="15" id="tlY-bo-cpi"/>
                             <constraint firstItem="7Bs-4M-cEO" firstAttribute="leading" secondItem="Wx0-6A-j62" secondAttribute="leadingMargin" constant="10" id="v8o-Mi-FZk"/>
                         </constraints>
@@ -416,7 +422,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TbM-7T-rug" id="ZtD-3G-tKp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -446,7 +452,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Puv-5i-hSl" id="DK0-7k-Sbd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -495,7 +501,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oPT-EX-dcN" id="qBd-fl-Kjz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -523,7 +529,10 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajr-dl-aIo" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightwood" translatesAutoresizingMaskIntoConstraints="NO" id="OK6-oc-WVO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajr-dl-aIo" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
                                 <rect key="frame" x="20" y="50" width="335" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qO-2j-GII">
@@ -581,7 +590,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94947652284263961" green="0.86061723474094709" blue="0.59403937043586963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="RC4-Je-QsY" firstAttribute="leading" secondItem="ajr-dl-aIo" secondAttribute="leading" constant="10" id="202-sD-pH5"/>
                                     <constraint firstItem="cUe-3U-zVb" firstAttribute="top" secondItem="ajr-dl-aIo" secondAttribute="top" constant="10" id="8sh-xm-bGD"/>
@@ -606,10 +615,10 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="file-page1" translatesAutoresizingMaskIntoConstraints="NO" id="43r-eS-tEu">
-                                <rect key="frame" x="67" y="338" width="240" height="128"/>
+                                <rect key="frame" x="26" y="338" width="323" height="270"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-8C-tWi">
-                                <rect key="frame" x="160" y="182" width="55" height="28"/>
+                                <rect key="frame" x="161.5" y="182" width="52" height="28"/>
                                 <color key="backgroundColor" red="1" green="0.72007614170000001" blue="0.1896825831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -619,7 +628,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-le-Nts">
-                                <rect key="frame" x="155" y="218" width="65" height="28"/>
+                                <rect key="frame" x="160" y="218" width="55" height="28"/>
                                 <color key="backgroundColor" red="0.90201735500000002" green="0.059020614710000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Delete">
@@ -633,6 +642,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="top" secondItem="vP2-ak-fpE" secondAttribute="top" constant="50" id="2LX-o6-iYt"/>
+                            <constraint firstItem="Fqv-TN-Bll" firstAttribute="top" secondItem="OK6-oc-WVO" secondAttribute="bottom" id="A2c-l1-6KS"/>
                             <constraint firstAttribute="trailing" secondItem="ajr-dl-aIo" secondAttribute="trailing" constant="20" id="KBA-cq-Nhf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="43r-eS-tEu" secondAttribute="trailing" constant="10" id="PTA-uw-1nd"/>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="UEq-hg-gFf"/>
@@ -642,7 +652,10 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                             <constraint firstItem="Fqv-TN-Bll" firstAttribute="top" secondItem="43r-eS-tEu" secondAttribute="bottom" constant="10" id="gid-yc-clV"/>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="leading" secondItem="vP2-ak-fpE" secondAttribute="leading" constant="20" id="hI8-B9-8fZ"/>
                             <constraint firstItem="43r-eS-tEu" firstAttribute="top" secondItem="rM8-le-Nts" secondAttribute="bottom" constant="92" id="kDC-F9-KgG"/>
+                            <constraint firstAttribute="trailing" secondItem="OK6-oc-WVO" secondAttribute="trailing" id="sgV-32-Dfi"/>
+                            <constraint firstItem="OK6-oc-WVO" firstAttribute="leading" secondItem="vP2-ak-fpE" secondAttribute="leading" id="uHQ-7z-MzF"/>
                             <constraint firstItem="6DK-8C-tWi" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="wdp-Il-T1z"/>
+                            <constraint firstItem="OK6-oc-WVO" firstAttribute="top" secondItem="vP2-ak-fpE" secondAttribute="top" id="xFr-iu-zy4"/>
                             <constraint firstItem="43r-eS-tEu" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="xW5-Zo-k6I"/>
                             <constraint firstItem="rM8-le-Nts" firstAttribute="top" secondItem="6DK-8C-tWi" secondAttribute="bottom" constant="8" id="yrJ-Bm-229"/>
                         </constraints>
@@ -658,17 +671,18 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t75-MZ-HHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="1818"/>
+            <point key="canvasLocation" x="109.59999999999999" y="1817.5412293853076"/>
         </scene>
     </scenes>
     <resources>
         <image name="file-page1" width="3508" height="2480"/>
         <image name="file-page2" width="3508" height="2480"/>
+        <image name="lightwood" width="1350" height="1858"/>
         <image name="logo_mundus" width="550" height="366"/>
         <image name="screen1" width="691" height="926"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wIs-gr-usS"/>
-        <segue reference="RZ9-tM-ftD"/>
+        <segue reference="LIa-Fm-34B"/>
+        <segue reference="Pqx-XK-h8V"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,23 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPad_Air_2_10.2_x86_64_2" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminQuestionCell.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-              <folding>
-                <element signature="e#142#154#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminQuestionsVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminQuestionsVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionsVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="82" column="16" lean-forward="false" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+            <state relative-caret-position="180">
+              <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
               <folding>
                 <element signature="e#143#155#0" expanded="true" />
               </folding>
@@ -39,10 +27,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AdminQuestionCell.xib" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.xib">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SourcesVC.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mundus_ios/SourcesVC.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GameSetupVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="1650">
               <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
                 <element signature="e#136#148#0" expanded="true" />
@@ -55,17 +63,7 @@
         <entry file="file://$PROJECT_DIR$/Mundus_ios/Mp3VC.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Podfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Podfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -83,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionPlayerCell.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mundus_ios/SessionPlayerCell.swift">
+      <file leaf-file-name="PublicationCell.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mundus_ios/PublicationCell.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="266">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -106,8 +104,8 @@
       <file leaf-file-name="UserQuestionVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mundus_ios/UserQuestionVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="296">
+              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
               <folding>
                 <element signature="e#141#153#0" expanded="true" />
               </folding>
@@ -157,8 +155,6 @@
         <option value="$PROJECT_DIR$/Mundus_ios/AdminDashBoard.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/AppDelegate.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/CardView.swift" />
-        <option value="$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.xib" />
-        <option value="$PROJECT_DIR$/Mundus_ios/SourcesVC.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/PublicationCell.swift" />
         <option value="$PROJECT_DIR$/Pods/Aldo/Aldo/Callback.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift" />
@@ -167,9 +163,11 @@
         <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/Mundus_ios/Mp3VC.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/UserQuestionCell.swift" />
-        <option value="$PROJECT_DIR$/Mundus_ios/UserQuestionVC.swift" />
+        <option value="$PROJECT_DIR$/Mundus_ios/SourcesVC.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/SessionPlayersTVC.swift" />
+        <option value="$PROJECT_DIR$/Mundus_ios/UserQuestionVC.swift" />
         <option value="$PROJECT_DIR$/Mundus_ios/AdminQuestionsVC.swift" />
+        <option value="$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.xib" />
       </list>
     </option>
   </component>
@@ -367,7 +365,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Mundus_ios" />
-    <property name="SearchEverywhereHistoryKey" value="use&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionVC.swift&#10;us&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionCell.swift&#10;admin&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;ad&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;cell&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;adm&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;admi&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;publ&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/PublicationCell.swift&#10;Aldo&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;requ&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/Requests.swift&#10;game&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/GameSetupVC.swift&#10;user&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionVC.swift&#10;sessionp&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;re&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/Requests.swift&#10;adminda&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminDashBoard.swift&#10;play&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;pla&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayerCell.swift&#10;pl&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;Ald&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;sour&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SourcesVC.swift&#10;sessionpl&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;aldo&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;ca&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;cal&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;Ad&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminDashBoard.swift&#10;AldoSes&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/AldoSession.swift&#10;Re&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Regex.swift&#10;ref&#9;ACTION&#9;Refactorings.QuickListPopupAction&#10;games&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/GameSetupVC.swift&#10;s&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SourcesVC.swift&#10;Cal&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;als&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;al&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;ald&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;que&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;toke&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenVC.swift&#10;ses&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;to&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenRouter.swift" />
+    <property name="SearchEverywhereHistoryKey" value="ses&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;ad&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;use&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionVC.swift&#10;us&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionCell.swift&#10;admin&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;cell&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;adm&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;admi&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionCell.swift&#10;publ&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/PublicationCell.swift&#10;Aldo&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;requ&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/Requests.swift&#10;game&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/GameSetupVC.swift&#10;user&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/UserQuestionVC.swift&#10;sessionp&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;re&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/Requests.swift&#10;adminda&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminDashBoard.swift&#10;play&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;pla&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayerCell.swift&#10;pl&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;Ald&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;sour&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SourcesVC.swift&#10;sessionpl&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SessionPlayersTVC.swift&#10;aldo&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;ca&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;cal&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;Ad&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminDashBoard.swift&#10;AldoSes&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/AldoSession.swift&#10;Re&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Regex.swift&#10;ref&#9;ACTION&#9;Refactorings.QuickListPopupAction&#10;games&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/GameSetupVC.swift&#10;s&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/SourcesVC.swift&#10;Cal&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Callback.swift&#10;als&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;al&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;ald&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Pods/Aldo/Aldo/Aldo.swift&#10;que&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/AdminQuestionsVC.swift&#10;toke&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenVC.swift&#10;to&#9;FILE&#9;file:///Users/macbookpro/Documents/Work/Apps/IOS/Mundus_Client/Mundus_ios/TokenRouter.swift" />
     <property name="OverrideImplement.combined" value="true" />
   </component>
   <component name="RunManager" selected="Application.Mundus_ios">
@@ -380,10 +378,6 @@
       <method />
     </configuration>
     <configuration default="true" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Mundus_ios" TARGET_NAME="Mundus_iosTests" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Mundus_ios" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Mundus_ios" TARGET_NAME="Mundus_ios" CONFIG_NAME="Debug" SCHEME_NAME="Mundus_ios" RUN_TARGET_PROJECT_NAME="Mundus_ios" RUN_TARGET_NAME="Mundus_ios" MAKE_ACTIVE="TRUE">
       <envs />
       <method />
     </configuration>
@@ -408,14 +402,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12781955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12728249" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17469311" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39754486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39754486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -424,6 +417,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -571,39 +565,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="88" lean-forward="false" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.xib">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/PublicationCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminReviewCallback.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminReviewCallback.h" />
     <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminDashBoard.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,19 +598,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/SourcesVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/TokenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="315">
           <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="e#142#154#0" expanded="true" />
@@ -707,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/GameSetupVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="1650">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="e#136#148#0" expanded="true" />
@@ -718,7 +673,7 @@
     <entry file="file://$PROJECT_DIR$/Mundus_ios/Mp3VC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -727,6 +682,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/SourcesVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/SessionPlayersTVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="e#142#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/PublicationCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -741,31 +722,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mundus_ios/UserQuestionVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="296">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding>
             <element signature="e#141#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/SessionPlayersTVC.swift">
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionsVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
           <folding>
-            <element signature="e#142#154#0" expanded="true" />
+            <element signature="e#143#155#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionsVC.swift">
+    <entry file="file://$PROJECT_DIR$/Mundus_ios/AdminQuestionCell.xib">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="82" column="16" lean-forward="false" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-          <folding>
-            <element signature="e#143#155#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
