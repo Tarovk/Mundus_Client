@@ -7,11 +7,32 @@
 //
 
 import UIKit
+import Aldo
 
-class AdminQuestionCell: UITableViewCell {
+class AdminQuestionCell: UITableViewCell, Callback {
 
-    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var questionId: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer: UILabel!
+    @IBOutlet weak var correctAnswer: UILabel!
+    var delegate: ReviewCallback?
+
+    @IBAction func reject(_ sender: Any) {
+        Requests.reviewQuestion(callback: self, review: "0", questionId: questionId.text!)
+        delegate!.onResponse(qId: questionId.text!)
+    }
+
+    @IBAction func accept(_ sender: Any) {
+        Requests.reviewQuestion(callback: self, review: "1", questionId: questionId.text!)
+        delegate!.onResponse(qId: questionId.text!)
+    }
+
+    func onResponse(request: String, responseCode: Int, response: NSDictionary) {
+        print(responseCode)
+        print(response)
+        if responseCode == 200 {
+
+        }
+    }
 
 }

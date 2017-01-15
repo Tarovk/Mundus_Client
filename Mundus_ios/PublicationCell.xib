@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="251"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="250.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQI-wM-SAB" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
@@ -27,8 +27,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0e-wd-5TS">
-                                <rect key="frame" x="314" y="95" width="50" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0e-wd-5TS">
+                                <rect key="frame" x="314" y="10" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,6 +49,12 @@
                                 <rect key="frame" x="0.0" y="41" width="395" height="189"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Publications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hea-xq-3Dz">
+                                <rect key="frame" x="60" y="91" width="276" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.90201735500000002" green="0.059020614710000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.79607843140000001" green="0.72156862749999995" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,9 +66,11 @@
                             <constraint firstItem="8SM-ir-ooz" firstAttribute="leading" secondItem="tQI-wM-SAB" secondAttribute="leading" id="Hx2-o6-TDo"/>
                             <constraint firstItem="Uba-48-XDH" firstAttribute="top" secondItem="tQI-wM-SAB" secondAttribute="top" constant="10" id="MlL-9Z-kUp"/>
                             <constraint firstAttribute="trailing" secondItem="Uba-48-XDH" secondAttribute="trailing" constant="10" id="Rro-hq-rVK"/>
+                            <constraint firstItem="hea-xq-3Dz" firstAttribute="centerY" secondItem="tQI-wM-SAB" secondAttribute="centerY" id="W5b-sN-pQB"/>
                             <constraint firstItem="zKD-2y-9Xy" firstAttribute="leading" secondItem="tQI-wM-SAB" secondAttribute="leading" constant="10" id="ahB-nG-Ilv"/>
                             <constraint firstItem="p0e-wd-5TS" firstAttribute="baseline" secondItem="Uba-48-XDH" secondAttribute="baseline" id="d1H-n5-oZg"/>
                             <constraint firstItem="Uba-48-XDH" firstAttribute="leading" secondItem="p0e-wd-5TS" secondAttribute="trailing" constant="10" id="etn-ug-c6X"/>
+                            <constraint firstItem="hea-xq-3Dz" firstAttribute="centerX" secondItem="tQI-wM-SAB" secondAttribute="centerX" id="fB2-bd-YtP"/>
                             <constraint firstItem="8SM-ir-ooz" firstAttribute="top" secondItem="bkg-Kd-DdF" secondAttribute="bottom" constant="10" id="ff8-Us-dAY"/>
                             <constraint firstItem="zKD-2y-9Xy" firstAttribute="top" secondItem="tQI-wM-SAB" secondAttribute="top" constant="10" id="n1y-Zd-b3i"/>
                         </constraints>
@@ -76,6 +84,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="noPubs" destination="hea-xq-3Dz" id="sck-Tq-v3I"/>
                 <outlet property="pubTable" destination="8SM-ir-ooz" id="AOd-Nl-lg4"/>
                 <outlet property="score" destination="Uba-48-XDH" id="oAR-6w-ww4"/>
                 <outlet property="username" destination="bkg-Kd-DdF" id="qnD-vj-PwZ"/>

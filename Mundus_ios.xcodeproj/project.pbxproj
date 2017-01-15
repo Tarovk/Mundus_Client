@@ -32,6 +32,7 @@
 		6122BBFC7C6ADB4BE044CB90 /* SessionPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B64A295A195BDEBC18C1 /* SessionPlayerCell.swift */; };
 		6122BC2B9151F41B5A24F431 /* AdminQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B5021B813FD758F64FFF /* AdminQuestionCell.swift */; };
 		6122BCA5453ACAE1F8EC16DC /* AdminQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B9090958C537A8DEF819 /* AdminQuestionsVC.swift */; };
+		6122BD07C588E8484038D66A /* ReviewCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122BED0BF8FFE73281288AA /* ReviewCallback.swift */; };
 		6122BD71405B6FA9481B0FB1 /* PublicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122BE56793AD11456F89E0A /* PublicationCell.swift */; };
 		6122BD8CB98B1D76ECEF89DC /* ImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B6A6135493CD82BE71DF /* ImgCell.swift */; };
 		6122BDBE6BAAF0BC32BE129D /* Mp3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122BB5BA0DBF1C22CF22BAA /* Mp3VC.swift */; };
@@ -95,6 +96,7 @@
 		6122BBED709DFB6FAD80B13C /* PlaceholderViewholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderViewholder.swift; sourceTree = "<group>"; };
 		6122BD3A4893BDD87AECEB68 /* PublicationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicationCell.xib; sourceTree = "<group>"; };
 		6122BE56793AD11456F89E0A /* PublicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicationCell.swift; sourceTree = "<group>"; };
+		6122BED0BF8FFE73281288AA /* ReviewCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCallback.swift; sourceTree = "<group>"; };
 		8351758911D96C99E6507386 /* Pods-Mundus_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		926502BEC3ECE13A8DECFFC2 /* Pods-Mundus_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4EDF7C4920A9B26471C13EB /* Pods_Mundus_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mundus_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 			children = (
 				6122B7B89AFDBE69566E061B /* Constants.swift */,
 				527F99601E1EFA6000A04EF5 /* CustomSegue.swift */,
+				6122BED0BF8FFE73281288AA /* ReviewCallback.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -345,7 +348,7 @@
 				TargetAttributes = {
 					52D930861E083568000D7EF1 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = P2VATGQJ74;
+						DevelopmentTeam = 74M6GDQR7C;
 						ProvisioningStyle = Automatic;
 					};
 					52D9309A1E083569000D7EF1 = {
@@ -574,6 +577,7 @@
 				6122BB13A5AA50DDAA97A1C6 /* UserQuestionCell.swift in Sources */,
 				6122B7A093ABD57984C64167 /* PlaceholderViewholder.swift in Sources */,
 				6122BDBE6BAAF0BC32BE129D /* Mp3VC.swift in Sources */,
+				6122BD07C588E8484038D66A /* ReviewCallback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,11 +733,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = 74M6GDQR7C;
 				INFOPLIST_FILE = Mundus_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -746,11 +750,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = 74M6GDQR7C;
 				INFOPLIST_FILE = Mundus_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

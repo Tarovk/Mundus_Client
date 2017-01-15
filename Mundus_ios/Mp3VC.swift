@@ -10,14 +10,24 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class Mp3VC: UIViewController {
+class Mp3VC: UIViewController, AVAudioPlayerDelegate{
     var player: AVAudioPlayer?
+    var index : Int = 0
 
+    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var textview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         playSound()
+    }
 
-        // Do any additional setup after loading the view.
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.done()
+    }
+
+    func done() {
+        performSegue(withIdentifier: "playerTabs", sender: nil)
+        player!.stop()
     }
 
     func playSound() {
@@ -25,6 +35,7 @@ class Mp3VC: UIViewController {
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            player!.delegate = self
             guard let player = player else { return }
 
             player.prepareToPlay()
@@ -34,20 +45,12 @@ class Mp3VC: UIViewController {
         }
     }
 
+    @IBAction func skipClicked(_ sender: Any) {
+        self.done()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

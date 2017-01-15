@@ -14,10 +14,16 @@ public enum MundusRequest: String {
     case REQUEST_ASSIGNED = "/Aldo/assigned"
     case REQUEST_PLAYER_PUBLICATIONS = "/Aldo/players"
     case REQUEST_SUBMIT_ANSWER = "/Aldo/question/%@/answer"
+    case REQUEST_GET_SUBMITTED = "/Aldo/submitted"
+    case REQUEST_REVIEW = "/Aldo/question/%@/review"
 
 }
 
 open class Requests {
+
+    open class func getSubmittedQuestions(callback: Callback? = nil) {
+        Aldo.request(command: MundusRequest.REQUEST_GET_SUBMITTED.rawValue, method: .get, parameters: [:], callback: callback)
+    }
 
     open class func submitQuestion(callback: Callback? = nil, answer : String, questionId: String) {
         let command: String = String(format: MundusRequest.REQUEST_SUBMIT_ANSWER.rawValue, questionId)
@@ -38,6 +44,11 @@ open class Requests {
 
    open class func getPubPlayers(callback: Callback? = nil) {
         Aldo.request(command: MundusRequest.REQUEST_PLAYER_PUBLICATIONS.rawValue, method: .get, parameters: [:], callback: callback)
+    }
+
+    open class func reviewQuestion(callback: Callback? = nil, review : String, questionId: String) {
+        let command: String = String(format: MundusRequest.REQUEST_REVIEW.rawValue, questionId)
+        Aldo.request(command: command, method: .put, parameters: ["reviewed" : review], callback: callback)
     }
 
 

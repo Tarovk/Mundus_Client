@@ -17,15 +17,45 @@ class UserQuestionCell: UITableViewCell, Callback {
     @IBOutlet weak var answer: UITextView!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var indicatorLabel: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         submitButton.layer.cornerRadius = 5
-        // Initialization code
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         print(responseCode)
         print(response)
+        if responseCode == 200 {
+            setUnderReview()
+        }
+    }
+
+    public func setDeclined() {
+        indicatorLabel.backgroundColor = UIColor.red
+        indicatorLabel.setTitle("Declined", for: .normal)
+        submitButton.backgroundColor = UIColor.gray
+        submitButton.setTitle("Submit new answer", for: UIControlState.normal)
+        submitButton.isEnabled = true
+        answer.isEditable = true
+    }
+
+    public func setActive() {
+        indicatorLabel.backgroundColor = UIColor.green
+        indicatorLabel.setTitle("Active", for: .normal)
+        submitButton.backgroundColor = UIColor.gray
+        submitButton.setTitle("Submit answer", for: UIControlState.normal)
+        submitButton.isEnabled = true
+        answer.isEditable = true
+    }
+
+    public func setUnderReview() {
+        indicatorLabel.backgroundColor = UIColor.orange
+        indicatorLabel.setTitle("Being reviewed", for: .normal)
+        submitButton.backgroundColor = UIColor.gray
+        submitButton.setTitle("Under review", for: UIControlState.normal)
+        submitButton.isEnabled = false
+        answer.isEditable = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

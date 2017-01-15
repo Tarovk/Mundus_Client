@@ -30,16 +30,28 @@ class SessionPlayersTVC: UITableViewController, Callback {
         return players.count
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refresh()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
-        retrievePlayers()
+        edgesForExtendedLayout = []
+        tableView.allowsSelection = false;
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: "refresh", for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl!)
+        self.tabBarController!.tabBar.backgroundColor = UIColor.white
     }
 
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("PublicationCell", owner: self)?.first as! PublicationCell
         cell.username.text = (players[indexPath.item] as! NSDictionary).object(forKey: "username") as! String
         cell.score.text = (players[indexPath.item] as! NSDictionary).object(forKey: "score") as! String
+        cell.publications = ((players[indexPath.item] as! NSDictionary).object(forKey: "publications") as! NSArray).mutableCopy() as! NSMutableArray
         return cell
     }
 
@@ -51,18 +63,17 @@ class SessionPlayersTVC: UITableViewController, Callback {
         return 300
     }
 
-
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-//        print(response)
         print(responseCode)
         if(responseCode == 200) {
             players = (response.object(forKey: "players") as! NSArray).mutableCopy() as! NSMutableArray
+            refreshControl!.endRefreshing()
             print(players)
             self.tableView.reloadData()
         }
     }
 
-    func retrievePlayers() {
+    func refresh() {
         Requests.getPubPlayers(callback: self)
     }
 

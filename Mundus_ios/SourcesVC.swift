@@ -22,6 +22,10 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         let width = (UIScreen.main.bounds.width - padding) / numberOfItemsPerRow
         let layout = collectionViewLayout as!UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width  * sqrt(2.0), height: width)
+        let adjustForTabbarInsets: UIEdgeInsets = UIEdgeInsetsMake(self.tabBarController!.tabBar.frame.height, 0, 0, 0);
+        edgesForExtendedLayout = []
+        self.tabBarController!.tabBar.backgroundColor = UIColor.white
+        extendedLayoutIncludesOpaqueBars = true;
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

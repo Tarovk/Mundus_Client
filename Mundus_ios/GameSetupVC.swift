@@ -19,16 +19,16 @@ class GameSetupVC: UIViewController, Callback {
     @IBOutlet weak var JoinButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     var items = NSDictionary()
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if(Aldo.hasSession()) {
+        if Aldo.hasSession() {
             print("ik heb sessie")
-            if (Aldo.getStoredSession()!.isAdmin()) {
+            if Aldo.getStoredSession()!.isAdmin() {
                 print("ik ben admin")
                 succesfullCreate()
             } else {
@@ -41,16 +41,13 @@ class GameSetupVC: UIViewController, Callback {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         JoinButton.layer.cornerRadius = 5
         CreateButton.layer.cornerRadius = 5
     }
-//    let BASE_API_URL : String = "https://expeditionmundus.herokuapp.com"
-
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         self.indicator.stopAnimating()
-        if(responseCode == 200) {
+        if responseCode == 200 {
             switch request {
             case Regex(pattern: AldoRequest.SESSION_CREATE.regex()):
                 succesfullCreate()
@@ -71,7 +68,7 @@ class GameSetupVC: UIViewController, Callback {
     }
 
     @IBAction func createGame(_ sender: Any) {
-        if(!nameIsEmpty()) {
+        if !nameIsEmpty() {
             self.indicator.startAnimating()
             Aldo.createSession(username: inputName.text!, callback: self)
         }
@@ -86,7 +83,7 @@ class GameSetupVC: UIViewController, Callback {
     }
 
     @IBAction func joinGame(_ sender: Any) {
-        if(!nameIsEmpty()){
+        if !nameIsEmpty() {
             self.indicator.startAnimating()
             let alert = UIAlertController(title: "Join token", message: "Vul de token in", preferredStyle: .alert)
             alert.addTextField { (textField) in
