@@ -11,30 +11,23 @@ import Aldo
 
 class UserQuestionVC: UITableViewController, Callback {
 
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     var cellDataArrray = [GroupCellData]()
     var questions : NSMutableArray = NSMutableArray()
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         if(responseCode == 200) {
             switch request {
-            case MundusRequest.REQUEST_ASSIGNED.rawValue:
+            case MundusRequestURI.REQUEST_ASSIGNED.rawValue:
                 questions = (response.object(forKey: "questions") as! NSArray).mutableCopy() as! NSMutableArray
-                print(questions)
                 refreshControl!.endRefreshing()
                 if(questions.count < 3) {
-                    Requests.getQuestion(callback: self)
+                    Mundus.getQuestion(callback: self)
                 }
-                if questions.count == 0 {
-                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-                    label.text             = "No questions left"
-                    label.textColor        = UIColor.black
-                    label.textAlignment    = .center
-                    tableView.backgroundView = label
-                    tableView.separatorStyle = .none
-                }
+                updateEmptyMessage()
                 break;
             default:
-                Requests.getAssignedQuestions(callback: self)
+                Mundus.getAssignedQuestions(callback: self)
                 break;
             }
         }
@@ -47,24 +40,52 @@ class UserQuestionVC: UITableViewController, Callback {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
-        tableView.allowsSelection = false;
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl!.addTarget(self, action: "refresh", for: UIControlEvents.valueChanged)
-        tableView.addSubview(refreshControl!)
+        
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
+        self.tableView.allowsSelection = false;
         self.tableView!.separatorStyle = .none
+        
+        initEmptyMessage()
+        initRefreshControl()
+        refresh()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refresh()
+        
+        let backgroundImage = UIImageView(image: UIImage(named: "lightwood"))
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.layer.zPosition = -1
+        self.tableView.backgroundView = backgroundImage
     }
 
+    private func initEmptyMessage() {
+        label.textColor        = UIColor.black
+        label.textAlignment    = .center
+        tableView.backgroundView = label
+        tableView.separatorStyle = .none
+        
+        updateEmptyMessage()
+    }
+    
+    private func initRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(UserQuestionVC.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl!)
+    }
+    
+    private func updateEmptyMessage() {
+        var text = ""
+        if questions.count == 0 {
+            text = "No questions left"
+        }
+        label.text = text
+    }
+    
     func refresh() {
-        Requests.getAssignedQuestions(callback: self)
+        Mundus.getAssignedQuestions(callback: self)
     }
 
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,8 +98,9 @@ class UserQuestionVC: UITableViewController, Callback {
         } else if review == "0" {
             cell.setDeclined()
         }
+        cell.backgroundColor = .clear
         cell.questionId = (questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String
-        cell.question.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String
+        cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

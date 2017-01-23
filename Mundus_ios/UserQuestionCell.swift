@@ -24,8 +24,6 @@ class UserQuestionCell: UITableViewCell, Callback {
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
-        print(response)
         if responseCode == 200 {
             setUnderReview()
         }
@@ -35,25 +33,25 @@ class UserQuestionCell: UITableViewCell, Callback {
         indicatorLabel.backgroundColor = UIColor.red
         indicatorLabel.setTitle("Declined", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Submit new answer", for: UIControlState.normal)
+        submitButton.setTitle("Submit New Answer", for: UIControlState.normal)
         submitButton.isEnabled = true
         answer.isEditable = true
     }
 
     public func setActive() {
         indicatorLabel.backgroundColor = UIColor.green
-        indicatorLabel.setTitle("Active", for: .normal)
+        indicatorLabel.setTitle("Not Answered", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Submit answer", for: UIControlState.normal)
+        submitButton.setTitle("Submit Answer", for: UIControlState.normal)
         submitButton.isEnabled = true
         answer.isEditable = true
     }
 
     public func setUnderReview() {
         indicatorLabel.backgroundColor = UIColor.orange
-        indicatorLabel.setTitle("Being reviewed", for: .normal)
+        indicatorLabel.setTitle("Under Review", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Under review", for: UIControlState.normal)
+        submitButton.setTitle("Under Review", for: UIControlState.normal)
         submitButton.isEnabled = false
         answer.isEditable = false
     }
@@ -65,6 +63,6 @@ class UserQuestionCell: UITableViewCell, Callback {
     }
 
     @IBAction func buttonClicked(_ sender: Any) {
-        Requests.submitQuestion(callback: self, answer: answer.text,questionId: questionId)
+        Mundus.submitQuestion(callback: self, answer: answer.text,questionId: questionId)
     }
 }

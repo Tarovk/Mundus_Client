@@ -10,16 +10,16 @@ import UIKit
 
 class ImgCell: UICollectionViewCell {
     
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var sourceImageView: UIImageView!
 
-    var imgg: UIImage? {
+    var image: UIImage? {
         didSet {
             updateUI()
         }
     }
 
     func updateUI() {
-        img.image = imgg
+        sourceImageView.image = image
     }
 
 }

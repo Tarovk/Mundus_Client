@@ -32,26 +32,31 @@ class SessionPlayersTVC: UITableViewController, Callback {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refresh()
+        
+        let backgroundImage = UIImageView(image: UIImage(named: "lightwood"))
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.layer.zPosition = -1
+        self.tableView.backgroundView = backgroundImage
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView!.separatorStyle = .none
+        
         edgesForExtendedLayout = []
-        tableView.allowsSelection = false;
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl!.addTarget(self, action: "refresh", for: UIControlEvents.valueChanged)
-        tableView.addSubview(refreshControl!)
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
+        self.tableView.allowsSelection = false
+        self.tableView!.separatorStyle = .none
+        
+        initRefreshControl()
+        refresh()
     }
 
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("PublicationCell", owner: self)?.first as! PublicationCell
-        cell.username.text = (players[indexPath.item] as! NSDictionary).object(forKey: "username") as! String
-        cell.score.text = (players[indexPath.item] as! NSDictionary).object(forKey: "score") as! String
+        
+        cell.backgroundColor = .clear
+        cell.username.text = ((players[indexPath.item] as! NSDictionary).object(forKey: "username") as! String)
+        cell.score.text = ((players[indexPath.item] as! NSDictionary).object(forKey: "score") as! String)
         cell.publications = ((players[indexPath.item] as! NSDictionary).object(forKey: "publications") as! NSArray).mutableCopy() as! NSMutableArray
         return cell
     }
@@ -63,19 +68,25 @@ class SessionPlayersTVC: UITableViewController, Callback {
     override  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
+    
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
         if(responseCode == 200) {
             players = (response.object(forKey: "players") as! NSArray).mutableCopy() as! NSMutableArray
             refreshControl!.endRefreshing()
-            print(players)
             self.tableView.reloadData()
         }
     }
 
     func refresh() {
-        Requests.getPubPlayers(callback: self)
+        Mundus.getPubPlayers(callback: self)
+    }
+    
+    private func initRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(SessionPlayersTVC.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl!)
     }
 
 }

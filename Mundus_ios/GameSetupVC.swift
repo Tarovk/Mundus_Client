@@ -14,69 +14,70 @@ import Toaster
 
 class GameSetupVC: UIViewController, Callback {
 
-    @IBOutlet weak var CreateButton: UIButton!
-    @IBOutlet weak var inputName: UITextField!
-    @IBOutlet weak var JoinButton: UIButton!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    var items = NSDictionary()
-
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var createGameButton: UIButton!
+    @IBOutlet weak var joinGameButton: UIButton!
+    @IBOutlet weak var mainIndicator: UIActivityIndicatorView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Aldo.hasSession() {
-            print("ik heb sessie")
-            if Aldo.getStoredSession()!.isAdmin() {
-                print("ik ben admin")
+        if let player = Aldo.getPlayer() {
+            if player.isAdmin() {
                 succesfullCreate()
-            } else {
-                print(Aldo.getStoredSession()!.getSessionID() + "   " + Aldo.getStoredSession()!.getPlayerID())
-                print("ik geen ben admin")
-                succesfullJoin()
+                return
             }
+            succesfullJoin()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        JoinButton.layer.cornerRadius = 5
-        CreateButton.layer.cornerRadius = 5
+        self.joinGameButton.layer.cornerRadius = 5
+        self.createGameButton.layer.cornerRadius = 5
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        self.indicator.stopAnimating()
+        self.mainIndicator.stopAnimating()
         if responseCode == 200 {
             switch request {
-            case Regex(pattern: AldoRequest.SESSION_CREATE.regex()):
+            case Regex(pattern: RequestURI.SESSION_CREATE.regex()):
                 succesfullCreate()
                 break
-            case Regex(pattern: AldoRequest.SESSION_JOIN.regex()):
+            case Regex(pattern: RequestURI.SESSION_JOIN.regex()):
                 succesfullJoin()
                 break
             default:
-                return;
+                break;
             }
-        } else {
-            Toast(text: response.object(forKey: "halt") as! String).show()
+            return
         }
+        Toast(text: "The token you entered is not valid").show()
     }
 
     public func succesfullCreate() {
         performSegue(withIdentifier: "adminSegue", sender: nil)
     }
+    
+    //Callback
+    func succesfullJoin(){
+        performSegue(withIdentifier: "playerSegue", sender: nil)
+    }
 
     @IBAction func createGame(_ sender: Any) {
         if !nameIsEmpty() {
-            self.indicator.startAnimating()
-            Aldo.createSession(username: inputName.text!, callback: self)
+            self.mainIndicator.startAnimating()
+            let username = usernameField.text!.replacingOccurrences(of: " ", with: "_")
+            Aldo.createSession(username: username, callback: self)
         }
     }
 
     func nameIsEmpty() -> Bool {
-        if(inputName.text!.isEmpty) {
-            Toast(text: "Vul alstublieft een naam in").show()
+        if self.usernameField.text!.isEmpty {
+            Toast(text: "Enter a valid username").show()
             return true;
         }
         return false;
@@ -84,17 +85,23 @@ class GameSetupVC: UIViewController, Callback {
 
     @IBAction func joinGame(_ sender: Any) {
         if !nameIsEmpty() {
-            self.indicator.startAnimating()
-            let alert = UIAlertController(title: "Join token", message: "Vul de token in", preferredStyle: .alert)
+            self.mainIndicator.startAnimating()
+            
+            let message = "Enter the token of the game you want to join."
+            let alert = UIAlertController(title: "Join Game", message: message, preferredStyle: .alert)
+            let username = self.usernameField.text!
+            
             alert.addTextField { (textField) in
                 textField.text = ""
             }
-            var textString = ""
+            
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                 let textField = alert!.textFields![0]
-                textString = textField.text!
-                Aldo.joinSession(username: self.inputName.text!, token: textString, callback: self)
+                let token = textField.text!
+                
+                Aldo.joinSession(username: username, token: token, callback: self)
             }))
+            
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -108,11 +115,6 @@ class GameSetupVC: UIViewController, Callback {
 //        }
 //        super.prepare(`for`: segue, sender: sender)
 //    }
-
-    //Callback
-    func succesfullJoin(){
-        performSegue(withIdentifier: "playerSegue", sender: nil)
-    }
 
 
 }

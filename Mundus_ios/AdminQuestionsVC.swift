@@ -77,7 +77,7 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
     }
 
     func refresh() {
-        Requests.getSubmittedQuestions(callback: self)
+        Mundus.getSubmittedQuestions(callback: self)
     }
 
     override func viewDidLoad() {
@@ -85,7 +85,7 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         self.tableView!.separatorStyle = .none
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         tableView.allowsSelection = false;
-        Requests.getSubmittedQuestions(callback: self)
+        Mundus.getSubmittedQuestions(callback: self)
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
 

@@ -59,12 +59,12 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return (publications[section] as! NSDictionary).object(forKey: "question") as! String
+        return ((publications[section] as! NSDictionary).object(forKey: "question") as! String)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("SessionPlayerCell", owner: self)?.first as! SessionPlayerCell
-        cell.playerName.text = (publications[indexPath.section] as! NSDictionary).object(forKey: "correct_answer") as! String
+        cell.playerName.text = ((publications[indexPath.section] as! NSDictionary).object(forKey: "correct_answer") as! String)
         return cell
     }
 
