@@ -18,7 +18,7 @@ class TokenVC: UIViewController, Callback {
             SwiftSpinner.setTitleFont(nil)
             SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
             SwiftSpinner.show(duration: 2.0, title: "Connected", animated: false)
-            self.performSegue(withIdentifier: "retrievedToken", sender: nil)
+            self.performSegue(withIdentifier: "startMainMenu", sender: nil)
             return
         }
 
