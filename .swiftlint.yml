@@ -1,0 +1,12 @@
+disabled_rules:
+  - force_cast
+included:
+  - Mundus_ios
+excluded:
+  - Mundus_iosTests
+  - Mundus_iosUITests
+  - Pods
+variable_name:
+  excluded:
+    - id
+reporter: "xcode"

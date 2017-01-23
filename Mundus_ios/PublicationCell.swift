@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegate{
+class PublicationCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -33,7 +33,6 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
         return label
     }
 
-
     @IBOutlet weak var noPubs: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var score: UILabel!
@@ -47,8 +46,11 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
 
     var section = ["pizza", "deep dish pizza", "calzone"]
 
-    var items = [["Margarita", "BBQ Chicken", "Pepperoni"], ["sausage", "meat lovers", "veggie lovers"], ["sausage", "chicken pesto", "prawns", "mushrooms"]]
-
+    var items = [
+        ["Margarita", "BBQ Chicken", "Pepperoni"],
+        ["sausage", "meat lovers", "veggie lovers"],
+        ["sausage", "chicken pesto", "prawns", "mushrooms"]
+    ]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -63,8 +65,10 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("SessionPlayerCell", owner: self)?.first as! SessionPlayerCell
-        cell.playerName.text = ((publications[indexPath.section] as! NSDictionary).object(forKey: "correct_answer") as! String)
+        let cell = Bundle.main.loadNibNamed("SessionPlayerCell", owner: self)?
+            .first as! SessionPlayerCell
+        cell.playerName.text = ((publications[indexPath.section] as! NSDictionary)
+            .object(forKey: "correct_answer") as! String)
         return cell
     }
 

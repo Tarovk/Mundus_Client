@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class Mp3VC: UIViewController, AVAudioPlayerDelegate{
+class Mp3VC: UIViewController, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
-    var index : Int = 0
+    var index: Int = 0
 
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var textview: UITextView!
@@ -50,7 +50,7 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate{
     @IBAction func skipClicked(_ sender: Any) {
         self.done()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -13,22 +13,22 @@ class UserQuestionVC: UITableViewController, Callback {
 
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     var cellDataArrray = [GroupCellData]()
-    var questions : NSMutableArray = NSMutableArray()
+    var questions: NSMutableArray = NSMutableArray()
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        if(responseCode == 200) {
+        if responseCode == 200 {
             switch request {
             case MundusRequestURI.REQUEST_ASSIGNED.rawValue:
                 questions = (response.object(forKey: "questions") as! NSArray).mutableCopy() as! NSMutableArray
                 refreshControl!.endRefreshing()
-                if(questions.count < 3) {
+                if questions.count < 3 {
                     Mundus.getQuestion(callback: self)
                 }
                 updateEmptyMessage()
-                break;
+                break
             default:
                 Mundus.getAssignedQuestions(callback: self)
-                break;
+                break
             }
         }
         self.tableView.reloadData()
@@ -40,12 +40,12 @@ class UserQuestionVC: UITableViewController, Callback {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
-        self.tableView.allowsSelection = false;
+        self.tableView.allowsSelection = false
         self.tableView!.separatorStyle = .none
-        
+
         initEmptyMessage()
         initRefreshControl()
         refresh()
@@ -53,7 +53,7 @@ class UserQuestionVC: UITableViewController, Callback {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         let backgroundImage = UIImageView(image: UIImage(named: "lightwood"))
         backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.layer.zPosition = -1
@@ -65,17 +65,17 @@ class UserQuestionVC: UITableViewController, Callback {
         label.textAlignment    = .center
         tableView.backgroundView = label
         tableView.separatorStyle = .none
-        
+
         updateEmptyMessage()
     }
-    
+
     private func initRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl!.addTarget(self, action: #selector(UserQuestionVC.refresh), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl!)
     }
-    
+
     private func updateEmptyMessage() {
         var text = ""
         if questions.count == 0 {
@@ -83,14 +83,14 @@ class UserQuestionVC: UITableViewController, Callback {
         }
         label.text = text
     }
-    
+
     func refresh() {
         Mundus.getAssignedQuestions(callback: self)
     }
 
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("UserQuestionCell", owner: self)?.first as! UserQuestionCell
-        let review : String = (questions[indexPath.item] as! NSDictionary).object(forKey: "reviewed") as! String
+        let review: String = (questions[indexPath.item] as! NSDictionary).object(forKey: "reviewed") as! String
         if review == "-2" {
             cell.setActive()
         } else if review == "-1" {
@@ -107,7 +107,7 @@ class UserQuestionVC: UITableViewController, Callback {
         return questions.count
     }
 
-    override func tableView(_ tableView : UITableView, heightForRowAt indexPath : IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
 

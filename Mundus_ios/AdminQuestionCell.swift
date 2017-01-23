@@ -15,16 +15,16 @@ class AdminQuestionCell: UITableViewCell, Callback {
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer: UILabel!
     @IBOutlet weak var correctAnswer: UILabel!
-    var delegate: ReviewCallback?
+    var callback: ReviewCallback?
 
     @IBAction func reject(_ sender: Any) {
         Mundus.reviewQuestion(callback: self, review: "0", questionId: questionId.text!)
-        delegate!.onResponse(qId: questionId.text!)
+        callback!.onResponse(qId: questionId.text!)
     }
 
     @IBAction func accept(_ sender: Any) {
         Mundus.reviewQuestion(callback: self, review: "1", questionId: questionId.text!)
-        delegate!.onResponse(qId: questionId.text!)
+        callback!.onResponse(qId: questionId.text!)
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {

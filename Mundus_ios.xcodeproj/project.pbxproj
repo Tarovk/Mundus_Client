@@ -276,6 +276,7 @@
 				52D930851E083568000D7EF1 /* Resources */,
 				700533C4BA8263FD306EFC26 /* [CP] Embed Pods Frameworks */,
 				D6DC1FAA59F8C7A9A73A0734 /* [CP] Copy Pods Resources */,
+				3F377B8A1E35C395006DDEF3 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -435,6 +436,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3F377B8A1E35C395006DDEF3 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		6C7A0CDE47BAA90037BBD193 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

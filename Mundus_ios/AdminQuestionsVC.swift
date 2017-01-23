@@ -84,7 +84,7 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
-        tableView.allowsSelection = false;
+        tableView.allowsSelection = false
         Mundus.getSubmittedQuestions(callback: self)
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
@@ -108,10 +108,9 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         self.socket.disconnect()
     }
 
-
-    func onResponse(qId : String) {
+    func onResponse(qId: String) {
         for i in 0...questions.count {
-            let id : String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
+            let id: String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
             if id == qId {
                 questions.removeObject(at: i)
                 self.tableView!.reloadData()
@@ -122,16 +121,17 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
 
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
-        cell.delegate = self
+        cell.callback = self
 
         cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String)
         cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
         cell.answer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String)
-        cell.correctAnswer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "correct_answer") as! String)
+        cell.correctAnswer.text = ((questions[indexPath.item] as! NSDictionary)
+            .object(forKey: "correct_answer") as! String)
         return cell
     }
 
-    override func tableView(_ tableView : UITableView, heightForRowAt indexPath : IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 358
     }
 

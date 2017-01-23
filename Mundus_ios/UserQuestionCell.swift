@@ -63,6 +63,6 @@ class UserQuestionCell: UITableViewCell, Callback {
     }
 
     @IBAction func buttonClicked(_ sender: Any) {
-        Mundus.submitQuestion(callback: self, answer: answer.text,questionId: questionId)
+        Mundus.submitQuestion(callback: self, answer: answer.text, questionId: questionId)
     }
 }

@@ -11,14 +11,13 @@ import Alamofire
 import Aldo
 import Toaster
 
-
 class GameSetupVC: UIViewController, Callback {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var createGameButton: UIButton!
     @IBOutlet weak var joinGameButton: UIButton!
     @IBOutlet weak var mainIndicator: UIActivityIndicatorView!
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -51,7 +50,7 @@ class GameSetupVC: UIViewController, Callback {
                 succesfullJoin()
                 break
             default:
-                break;
+                break
             }
             return
         }
@@ -61,9 +60,9 @@ class GameSetupVC: UIViewController, Callback {
     public func succesfullCreate() {
         performSegue(withIdentifier: "adminSegue", sender: nil)
     }
-    
+
     //Callback
-    func succesfullJoin(){
+    func succesfullJoin() {
         performSegue(withIdentifier: "playerSegue", sender: nil)
     }
 
@@ -78,30 +77,30 @@ class GameSetupVC: UIViewController, Callback {
     func nameIsEmpty() -> Bool {
         if self.usernameField.text!.isEmpty {
             Toast(text: "Enter a valid username").show()
-            return true;
+            return true
         }
-        return false;
+        return false
     }
 
     @IBAction func joinGame(_ sender: Any) {
         if !nameIsEmpty() {
             self.mainIndicator.startAnimating()
-            
+
             let message = "Enter the token of the game you want to join."
             let alert = UIAlertController(title: "Join Game", message: message, preferredStyle: .alert)
             let username = self.usernameField.text!
-            
+
             alert.addTextField { (textField) in
                 textField.text = ""
             }
-            
+
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                 let textField = alert!.textFields![0]
                 let token = textField.text!
-                
+
                 Aldo.joinSession(username: username, token: token, callback: self)
             }))
-            
+
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -116,6 +115,4 @@ class GameSetupVC: UIViewController, Callback {
 //        super.prepare(`for`: segue, sender: sender)
 //    }
 
-
 }
-

@@ -5,6 +5,6 @@
 
 import Foundation
 
-enum Constants:String {
-    case Base_API_URL = "http://172.20.0.29:4567/";
+enum Constants: String {
+    case Base_API_URL = "http://172.20.0.29:4567/"
 }
