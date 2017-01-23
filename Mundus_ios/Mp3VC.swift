@@ -27,27 +27,30 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate{
 
     func done() {
         performSegue(withIdentifier: "playerTabs", sender: nil)
-        player!.stop()
+        if player != nil {
+            player!.stop()
+        }
     }
 
     func playSound() {
-        let url = Bundle.main.url(forResource: "Mundus_introduction", withExtension: "mp3")!
+        if let audio = NSDataAsset(name: "Mundus_introduction") {
+            do {
+                player = try AVAudioPlayer(data: audio.data, fileTypeHint: AVFileTypeMPEGLayer3)
+                player!.delegate = self
+                guard let player = player else { return }
 
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player!.delegate = self
-            guard let player = player else { return }
-
-            player.prepareToPlay()
-            player.play()
-        } catch let error {
-            print(error.localizedDescription)
+                player.prepareToPlay()
+                player.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
 
     @IBAction func skipClicked(_ sender: Any) {
         self.done()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
