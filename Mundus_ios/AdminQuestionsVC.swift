@@ -90,7 +90,7 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
 
         let ID: String = UIDevice.current.identifierForVendor!.uuidString
-        let player: String = Aldo.getStoredSession()!.getPlayerID()
+        let player: String = Aldo.getPlayer()!.getId()
         let authToken: String = Aldo.getStorage().object(forKey: Aldo.Keys.AUTH_TOKEN.rawValue) as! String
         self.socket.delegate = self
 
@@ -124,10 +124,10 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
         cell.delegate = self
 
-        cell.questionId.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String
-        cell.question.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String
-        cell.answer.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String
-        cell.correctAnswer.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "correct_answer") as! String
+        cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String)
+        cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
+        cell.answer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String)
+        cell.correctAnswer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "correct_answer") as! String)
         return cell
     }
 

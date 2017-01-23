@@ -5,8 +5,8 @@
 //  Created by Stephan on 04/01/2017.
 //  Copyright (c) 2017 Stephan. All rights reserved.
 //
-import Aldo
 import UIKit
+import Aldo
 
 class AdminDashBoard: UIViewController, Callback {
     @IBOutlet weak var gameStateButton: UIButton!
@@ -18,10 +18,10 @@ class AdminDashBoard: UIViewController, Callback {
     override func viewDidLoad() {
         super.viewDidLoad()
         styleButton()
-        let session: AldoSession = Aldo.getStoredSession()!
-        username.text = session.getUsername()
-        userJoinToken.text =  session.getUserToken()
-        adminToken.text = session.getModToken()
+        let player: Player = Aldo.getPlayer()!
+        username.text = player.getUsername()
+        userJoinToken.text =  player.getSession().getUserToken()
+        adminToken.text = player.getSession().getModeratorToken()
     }
 
     func styleButton() {
@@ -40,9 +40,9 @@ class AdminDashBoard: UIViewController, Callback {
 
     @IBAction func changeStateClicked(_ sender: Any) {
         if gameStateButton.titleLabel!.text! == "Play" {
-            Aldo.changeSessionState(newState: AldoSession.State.PLAY, callback: self)
+            Aldo.changeSessionStatus(newStatus: Session.Status.PLAYING, callback: self)
         } else if gameStateButton.titleLabel!.text! == "Pause" {
-            Aldo.changeSessionState(newState: AldoSession.State.PAUSE, callback: self)
+            Aldo.changeSessionStatus(newStatus: Session.Status.PAUSED, callback: self)
         }
     }
 
@@ -51,24 +51,19 @@ class AdminDashBoard: UIViewController, Callback {
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
         if responseCode == 200 {
             switch request {
 
-            case Regex(pattern: AldoRequest.SESSION_STATE_PLAY.regex()):
+            case Regex(pattern: RequestURI.SESSION_STATE_PLAY.regex()):
                 gameStateButton.titleLabel!.text! = "Pause"
                 gameStateButton.backgroundColor = UIColor.orange
-                print("play worked")
                 break
 
-            case Regex(pattern: AldoRequest.SESSION_STATE_PAUSE.regex()):
+            case Regex(pattern: RequestURI.SESSION_STATE_PAUSE.regex()):
                 gameStateButton.titleLabel!.text! = "Play"
                 gameStateButton.backgroundColor = UIColor.green
-                print("pauze worked")
                 break
-            case Regex(pattern: AldoRequest.SESSION_DELETE.regex()):
-                print("delete done")
-                print(Aldo.hasSession())
+            case Regex(pattern: RequestURI.SESSION_DELETE.regex()):
                 self.dismiss(animated: true, completion: {})
             break
             default:
