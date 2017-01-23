@@ -349,7 +349,6 @@
 					};
 					52D930A51E083569000D7EF1 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = P2VATGQJ74;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 52D930861E083568000D7EF1;
 					};
@@ -731,7 +730,7 @@
 				INFOPLIST_FILE = Mundus_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -750,7 +749,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ON_DEMAND_RESOURCES_PREFETCH_ORDER = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,7 +795,7 @@
 			baseConfigurationReference = 926502BEC3ECE13A8DECFFC2 /* Pods-Mundus_iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Mundus_iosUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -812,7 +811,7 @@
 			baseConfigurationReference = 8351758911D96C99E6507386 /* Pods-Mundus_iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Mundus_iosUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
