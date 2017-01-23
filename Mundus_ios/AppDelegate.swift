@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Aldo
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor
         window: UIWindow?) -> UIInterfaceOrientationMask {
         return isShowingSources ? UIInterfaceOrientationMask.landscapeLeft : UIInterfaceOrientationMask.portrait
+    }
+    
+    class func clearSessionData() {
+        Aldo.getStorage().removeObject(forKey: Aldo.Keys.SESSION.rawValue)
     }
 
 }
