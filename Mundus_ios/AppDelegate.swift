@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("MY_UI_TEST_MODE") {
+            Aldo.getStorage().removeObject(forKey: Aldo.Keys.SESSION.rawValue)
+        }
 
         forcePortraitOrientation()
         return true
@@ -40,11 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor
         window: UIWindow?) -> UIInterfaceOrientationMask {
         return isShowingSources ? UIInterfaceOrientationMask.landscapeLeft : UIInterfaceOrientationMask.portrait
-    }
-
-    /// Clears all information about a stored session.
-    class func clearSessionData() {
-        Aldo.getStorage().removeObject(forKey: Aldo.Keys.SESSION.rawValue)
     }
 
 }
