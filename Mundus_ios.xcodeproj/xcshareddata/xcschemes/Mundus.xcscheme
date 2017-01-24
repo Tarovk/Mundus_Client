@@ -49,6 +49,26 @@
                ReferencedContainer = "container:Mundus_ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F6DC5691E37E99800277A7A"
+               BuildableName = "MundusTests.xctest"
+               BlueprintName = "MundusTests"
+               ReferencedContainer = "container:Mundus_ios.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F6DC5891E37EB4400277A7A"
+               BuildableName = "Mundus_Tests.xctest"
+               BlueprintName = "Mundus_Tests"
+               ReferencedContainer = "container:Mundus_ios.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

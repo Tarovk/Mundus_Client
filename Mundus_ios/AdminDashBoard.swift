@@ -2,12 +2,13 @@
 //  AdminDashBoard.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 04/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 04/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 import UIKit
 import Aldo
 
+/// ViewController for the Admin dashboard.
 class AdminDashBoard: UIViewController, Callback {
     @IBOutlet weak var gameStateButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
@@ -24,6 +25,7 @@ class AdminDashBoard: UIViewController, Callback {
         adminToken.text = player.getSession().getModeratorToken()
     }
 
+    /// Changes the radius of the buttons in the panel.
     func styleButton() {
         deleteButton.layer.cornerRadius = 5
         gameStateButton.layer.cornerRadius = 5
@@ -34,10 +36,8 @@ class AdminDashBoard: UIViewController, Callback {
         tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "dashboard"), tag: 0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    /// Sends a request to change the status of the game depending
+    /// on the button tapped.
     @IBAction func changeStateClicked(_ sender: Any) {
         if gameStateButton.titleLabel!.text! == "Play" {
             Aldo.changeSessionStatus(newStatus: Session.Status.PLAYING, callback: self)
@@ -46,6 +46,7 @@ class AdminDashBoard: UIViewController, Callback {
         }
     }
 
+    /// Sends a request to delete the session.
     @IBAction func deleteClicked(_ sender: Any) {
         Aldo.deleteSession(callback: self)
     }

@@ -2,14 +2,15 @@
 //  SessionPlayerCell.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 04/01/2017.
-//  Copyright © 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 04/01/2017.
+//  Copyright © 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import Aldo
 
-class AdminQuestionCell: UITableViewCell, Callback {
+/// ViewCell for the questions in the Admin question panel.
+class AdminQuestionCell: UITableViewCell {
 
     @IBOutlet weak var questionId: UILabel!
     @IBOutlet weak var question: UILabel!
@@ -17,21 +18,25 @@ class AdminQuestionCell: UITableViewCell, Callback {
     @IBOutlet weak var correctAnswer: UILabel!
     var callback: ReviewCallback?
 
+    /**
+        Sends a request for a negative review.
+     */
     @IBAction func reject(_ sender: Any) {
-        Mundus.reviewQuestion(callback: self, review: "0", questionId: questionId.text!)
-        callback!.onResponse(qId: questionId.text!)
+        Mundus.reviewQuestion(callback: nil, review: "0", questionId: questionId.text!)
+
+        if callback != nil {
+            callback!.onReviewed(qId: questionId.text!)
+        }
     }
 
+    /**
+     Sends a request for a postive review.
+     */
     @IBAction func accept(_ sender: Any) {
-        Mundus.reviewQuestion(callback: self, review: "1", questionId: questionId.text!)
-        callback!.onResponse(qId: questionId.text!)
-    }
+        Mundus.reviewQuestion(callback: nil, review: "1", questionId: questionId.text!)
 
-    func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
-        print(response)
-        if responseCode == 200 {
-
+        if callback != nil {
+            callback!.onReviewed(qId: questionId.text!)
         }
     }
 

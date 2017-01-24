@@ -2,14 +2,15 @@
 //  Mp3VC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 11/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 11/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 import AudioToolbox
 
+/// ViewController for the information screen.
 class Mp3VC: UIViewController, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
     var index: Int = 0
@@ -25,6 +26,7 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate {
         self.done()
     }
 
+    /// Starts the player dashboard.
     func done() {
         performSegue(withIdentifier: "playerTabs", sender: nil)
         if player != nil {
@@ -32,6 +34,7 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate {
         }
     }
 
+    /// Starts the playback of the introduction audio.
     func playSound() {
         if let audio = NSDataAsset(name: "Mundus_introduction") {
             do {
@@ -49,11 +52,6 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func skipClicked(_ sender: Any) {
         self.done()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

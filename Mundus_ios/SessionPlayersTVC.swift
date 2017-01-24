@@ -2,30 +2,32 @@
 //  SessionPlayersTVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 04/01/2017.
-//  Copyright © 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 04/01/2017.
+//  Copyright © 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import Aldo
 
+/// Data stored for the SessionPlayerCell.
 struct CellData {
     let username: String!
     let score: String!
     let playerID: String!
 }
 
+/// ViewController for the publication panel.
 class SessionPlayersTVC: UITableViewController, Callback {
 
     var cellDataArrray = [CellData]()
     var players: NSMutableArray = NSMutableArray()
-    let hostAddress: String = "http://192.1hehe68.0.75:4567/"
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Publications", image: UIImage(named: "publications"), tag: 1)
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
     }
@@ -51,6 +53,7 @@ class SessionPlayersTVC: UITableViewController, Callback {
         refresh()
     }
 
+    /// Draws a player with publications in the panel.
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("PublicationCell", owner: self)?.first as! PublicationCell
 
@@ -78,10 +81,12 @@ class SessionPlayersTVC: UITableViewController, Callback {
         }
     }
 
+    /// Sends a request to retrieve the players with their publications.
     func refresh() {
         Mundus.getPubPlayers(callback: self)
     }
 
+    /// Initializes the pull to refresh mechanism.
     private func initRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")

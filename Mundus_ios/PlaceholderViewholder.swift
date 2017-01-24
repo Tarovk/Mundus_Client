@@ -1,6 +1,9 @@
 //
-// Created by Stephan on 11/01/2017.
-// Copyright (c) 2017 Stephan. All rights reserved.
+//  PlaceholderViewholder.swift
+//  Mundus_ios
+//
+// Created by Team Aldo on 11/01/2017.
+// Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit

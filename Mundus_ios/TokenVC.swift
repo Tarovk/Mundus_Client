@@ -2,14 +2,15 @@
 //  TokenVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 03/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 03/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import SwiftSpinner
 import Aldo
 
+/// ViewController for the screen requesting an authorization token.
 class TokenVC: UIViewController, Callback {
     let hostAddress: String = "https://expeditionmundus.herokuapp.com"
 
@@ -35,6 +36,8 @@ class TokenVC: UIViewController, Callback {
         self.retrieveToken()
     }
 
+    /// Sends a request to retrieve a token if not available,
+    /// otherwise starts the view corresponding to the role of the player.
     func retrieveToken() {
         if Aldo.hasAuthToken() {
             var identifier = "startMainMenu"

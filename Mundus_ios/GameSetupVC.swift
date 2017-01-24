@@ -2,8 +2,8 @@
 //  GameSetupVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 19/12/2016.
-//  Copyright © 2016 Stephan. All rights reserved.
+//  Created by Team Aldo on 19/12/2016.
+//  Copyright © 2016 Team Aldo. All rights reserved.
 //
 
 import UIKit
@@ -22,6 +22,7 @@ class GameSetupVC: UIViewController, Callback {
         super.viewWillAppear(animated)
     }
 
+    /// Checks whether to go to the Admin dashboard or the User dashboard.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let player = Aldo.getPlayer() {
@@ -57,15 +58,17 @@ class GameSetupVC: UIViewController, Callback {
         Toast(text: "The token you entered is not valid").show()
     }
 
+    /// Starts the Admin panel.
     public func succesfullCreate() {
         performSegue(withIdentifier: "adminSegue", sender: nil)
     }
 
-    //Callback
+    /// Starts the user panel.
     func succesfullJoin() {
         performSegue(withIdentifier: "playerSegue", sender: nil)
     }
 
+    /// Sends a create request to the server running the Aldo Framework.
     @IBAction func createGame(_ sender: Any) {
         if !nameIsEmpty() {
             self.mainIndicator.startAnimating()
@@ -74,6 +77,11 @@ class GameSetupVC: UIViewController, Callback {
         }
     }
 
+    /**
+        Checks whether the user entered a name.
+     
+        - Returns: *True* if a name is entered, otherwise *false*.
+     */
     func nameIsEmpty() -> Bool {
         if self.usernameField.text!.isEmpty {
             Toast(text: "Enter a valid username").show()
@@ -82,6 +90,7 @@ class GameSetupVC: UIViewController, Callback {
         return false
     }
 
+    /// Sends a join request to the server running the Aldo Framework.
     @IBAction func joinGame(_ sender: Any) {
         if !nameIsEmpty() {
             self.mainIndicator.startAnimating()
@@ -104,15 +113,5 @@ class GameSetupVC: UIViewController, Callback {
             self.present(alert, animated: true, completion: nil)
         }
     }
-//
-//    override func prepare(`for` segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "adminSegue" {
-//            let Pr : UITabBarController = segue.destination as! UITabBarController
-//            var dashBoard: AdminDashBoard = Pr.viewControllers![0] as! AdminDashBoard
-//            dashBoard.items = items
-//            dashBoard.usname = inputName.text!
-//        }
-//        super.prepare(`for`: segue, sender: sender)
-//    }
 
 }

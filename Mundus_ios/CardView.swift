@@ -2,8 +2,8 @@
 //  CardView.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 05/01/2017.
-//  Copyright © 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 05/01/2017.
+//  Copyright © 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit

@@ -2,13 +2,14 @@
 //  UserQuestionVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 10/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 10/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import Aldo
 
+/// ViewController for the user question panel.
 class UserQuestionVC: UITableViewController, Callback {
 
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -33,6 +34,7 @@ class UserQuestionVC: UITableViewController, Callback {
         }
         self.tableView.reloadData()
     }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "My questions", image: UIImage(named: "userwrite"), tag: 0)
@@ -51,6 +53,7 @@ class UserQuestionVC: UITableViewController, Callback {
         refresh()
     }
 
+    /// Sets the background of the panel.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -60,6 +63,7 @@ class UserQuestionVC: UITableViewController, Callback {
         self.tableView.backgroundView = backgroundImage
     }
 
+    /// Initialized the empty message in the middle of the panel.
     private func initEmptyMessage() {
         label.textColor        = UIColor.black
         label.textAlignment    = .center
@@ -69,6 +73,7 @@ class UserQuestionVC: UITableViewController, Callback {
         updateEmptyMessage()
     }
 
+    /// Initialized the pull to refresh mechanism.
     private func initRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -76,6 +81,8 @@ class UserQuestionVC: UITableViewController, Callback {
         tableView.addSubview(refreshControl!)
     }
 
+    /// Updates the empty message in the middle of the panel
+    /// depening on whether questions are available or not.
     private func updateEmptyMessage() {
         var text = ""
         if questions.count == 0 {
@@ -84,6 +91,7 @@ class UserQuestionVC: UITableViewController, Callback {
         label.text = text
     }
 
+    /// Sends a request to retrieve the questions assigned to the player.
     func refresh() {
         Mundus.getAssignedQuestions(callback: self)
     }
@@ -99,10 +107,11 @@ class UserQuestionVC: UITableViewController, Callback {
             cell.setDeclined()
         }
         cell.backgroundColor = .clear
-        cell.questionId = (questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String
+        cell.questionId = (questions[indexPath.item] as! NSDictionary).object(forKey: "questionID") as! String
         cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
         return cell
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
@@ -110,5 +119,4 @@ class UserQuestionVC: UITableViewController, Callback {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-
 }

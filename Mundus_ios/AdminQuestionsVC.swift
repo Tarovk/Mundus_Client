@@ -2,18 +2,21 @@
 //  AdminQuestionsVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 02/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 02/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import Aldo
 
+/// Data stored for an AdminQuestionCell.
 struct GroupCellData {
     let question: String!
     let answer: String!
     let correctAnswer: String!
 }
+
+/// ViewController for the Admin question panel.
 class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
 
     var cellDataArrray = [GroupCellData]()
@@ -44,20 +47,25 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         return questions.count
     }
 
+    /// Sends a request to retrieve all submitted answers.
     func refresh() {
         Mundus.getSubmittedQuestions(callback: self)
     }
 
+    /// Changes the background of the panel and retreives the answers.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
-        tableView.allowsSelection = false
-        Mundus.getSubmittedQuestions(callback: self)
-        edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
+
+        tableView.allowsSelection = false
+        edgesForExtendedLayout = []
+
+        refresh()
     }
 
+    /// Opens a WebSocket connection if possible when creating the view.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if socket == nil {
@@ -67,6 +75,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         socket!.connect()
     }
 
+    /// Closes a WebSocket connection if a connection was established.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if socket != nil {
@@ -74,7 +83,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         }
     }
 
-    func onResponse(qId: String) {
+    func onReviewed(qId: String) {
         for i in 0...questions.count {
             let id: String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
             if id == qId {
@@ -85,6 +94,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         }
     }
 
+    /// Draws the submitted answers in the panel.
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
         cell.callback = self
