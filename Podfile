@@ -6,7 +6,6 @@ target 'Mundus_ios' do
     use_frameworks!
 
     pod 'Aldo', :git => 'https://github.com/makchich/aldo-api-client-library-ios.git', :branch => 'develop'
-    pod 'Starscream', '~> 2.0.0'
     pod 'SwiftSpinner'
     pod 'SKPhotoBrowser'
     pod 'Toaster'
