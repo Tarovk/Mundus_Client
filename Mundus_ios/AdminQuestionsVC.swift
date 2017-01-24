@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Starscream
 import Aldo
 
 struct GroupCellData {
@@ -15,61 +14,30 @@ struct GroupCellData {
     let answer: String!
     let correctAnswer: String!
 }
-class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, ReviewCallback {
+class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
 
     var cellDataArrray = [GroupCellData]()
     var questions: NSMutableArray = NSMutableArray()
-    let socket = WebSocket(url: URL(string: "ws://expeditionmundus.herokuapp.com/subscribe/answer")!)
+    var socket: AldoWebSocket?
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         print(response)
         if responseCode == 200 {
-            questions = (response.object(forKey: "answers") as! NSArray).mutableCopy() as! NSMutableArray
-            print(questions)
-            self.tableView.reloadData()
-//            if questions.count == 0 {
-//                print("heleaal nix")
-//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//                label.text             = "No questions need reviewing"
-//                label.textColor        = UIColor.black
-//                label.textAlignment    = .center
-//                let imageView : UIImageView =  UIImageView(image: UIImage(named: "lightwood"))
-//                tableView.backgroundView = label
-//                tableView.separatorStyle = .none
-//            } else {
-//                tableView.separatorStyle = .singleLine
-//                tableView.backgroundView = nil
-//            }
+            switch request {
+            case MundusRequestURI.REQUEST_GET_SUBMITTED.rawValue:
+                questions = (response.object(forKey: "answers") as! NSArray).mutableCopy() as! NSMutableArray
+                self.tableView.reloadData()
+                break
+            default:
+                refresh()
+                break
+            }
         }
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Question feed", image: UIImage(named: "qfeed"), tag: 0)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    func websocketDidConnect(socket: WebSocket) {
-        print("websocket is connected")
-    }
-
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        print("websocket is disconnected: \(error?.localizedDescription)")
-    }
-
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        if !text.isEmpty {
-            refresh()
-        }
-        print("got some text: \(text)")
-    }
-
-    func websocketDidReceiveData(socket: WebSocket, data: Data) {
-        print(data)
-        print("got some data: \(data.count)")
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,24 +56,22 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         Mundus.getSubmittedQuestions(callback: self)
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
-
-        let ID: String = UIDevice.current.identifierForVendor!.uuidString
-        let player: String = Aldo.getPlayer()!.getId()
-        let authToken: String = Aldo.getStorage().object(forKey: Aldo.Keys.AUTH_TOKEN.rawValue) as! String
-        self.socket.delegate = self
-
-        self.socket.headers["Authorization"] = "\(ID):\(authToken):\(player)"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refresh()
-        self.socket.connect()
+        if socket == nil {
+            socket = Aldo.subscribe(path: "/subscribe/answer", callback: self)
+            return
+        }
+        socket!.connect()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.socket.disconnect()
+        if socket != nil {
+            self.socket!.disconnect()
+        }
     }
 
     func onResponse(qId: String) {
