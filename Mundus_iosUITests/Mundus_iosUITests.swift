@@ -117,4 +117,29 @@ class Mundus_iosUITests: XCTestCase {
         
     }
     
+    func testJoinValid() {
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("sss")
+        app.buttons["Join Game"].tap()
+        
+        let joinGameAlert = app.alerts["Join Game"]
+        let textField = joinGameAlert.collectionViews.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element
+        textField.tap()
+        textField.typeText("49cc5")
+        joinGameAlert.buttons["OK"].tap()
+        enterAUsernameTextField.tap()
+        app.buttons["Skip >>"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Sources"].tap()
+        tabBarsQuery.buttons["My questions"].tap()
+        
+    }
+    
+    
+    
 }
