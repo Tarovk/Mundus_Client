@@ -104,15 +104,5 @@ class GameSetupVC: UIViewController, Callback {
             self.present(alert, animated: true, completion: nil)
         }
     }
-//
-//    override func prepare(`for` segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "adminSegue" {
-//            let Pr : UITabBarController = segue.destination as! UITabBarController
-//            var dashBoard: AdminDashBoard = Pr.viewControllers![0] as! AdminDashBoard
-//            dashBoard.items = items
-//            dashBoard.usname = inputName.text!
-//        }
-//        super.prepare(`for`: segue, sender: sender)
-//    }
 
 }
