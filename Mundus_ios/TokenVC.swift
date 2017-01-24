@@ -31,7 +31,7 @@ class TokenVC: UIViewController, Callback {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Aldo.setHostAddress(address: hostAddress, excludePort: true)
+        Aldo.setHostAddress(address: hostAddress)
         self.retrieveToken()
     }
 
