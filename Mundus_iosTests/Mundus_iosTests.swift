@@ -2,8 +2,8 @@
 //  Mundus_iosTests.swift
 //  Mundus_iosTests
 //
-//  Created by Stephan on 19/12/2016.
-//  Copyright © 2016 Stephan. All rights reserved.
+//  Created by Team Aldo on 19/12/2016.
+//  Copyright © 2016 Team Aldo. All rights reserved.
 //
 
 import XCTest

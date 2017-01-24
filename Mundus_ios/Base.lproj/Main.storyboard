@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +34,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="retrievedToken" id="O9r-OV-fct"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startMainMenu" id="O9r-OV-fct"/>
+                        <segue destination="wy7-40-faM" kind="show" identifier="continueJoinSession" id="O2a-bY-2Qk"/>
+                        <segue destination="62m-5U-dfa" kind="show" identifier="continueAdminSession" id="VE7-QA-Mv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCK-VL-m3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,97 +55,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-Sd-gUS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="183"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightwood" translatesAutoresizingMaskIntoConstraints="NO" id="6gg-Kb-j0J">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-Sd-gUS">
+                                <rect key="frame" x="12" y="160" width="350" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo_mundus" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-He-o9D">
-                                        <rect key="frame" x="73" y="-72" width="228" height="183"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="228" id="9mT-by-eeH"/>
-                                            <constraint firstAttribute="height" constant="183" id="Usw-Lf-Z6v"/>
-                                            <constraint firstAttribute="width" secondItem="nwe-He-o9D" secondAttribute="height" multiplier="76:61" id="Ye9-1G-guf"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mundus_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-He-o9D" userLabel="mundusLogoView">
+                                        <rect key="frame" x="15" y="8" width="320" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyU-L0-z7R" userLabel="joinGameButton">
+                                        <rect key="frame" x="87" y="293" width="175" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.46274509803921571" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Join Game"/>
+                                        <connections>
+                                            <action selector="joinGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXB-tc-niO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-OR-iQ6" userLabel="createGameButton">
+                                        <rect key="frame" x="87" y="229" width="175" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.46274509803921571" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Start Game"/>
+                                        <connections>
+                                            <action selector="createGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgY-P9-Ycn"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-C9-tj3" userLabel="usernameField">
+                                        <rect key="frame" x="88" y="159" width="175" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GeP-4k-P8B" userLabel="mainIndicator">
+                                        <rect key="frame" x="165" y="308" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="nwe-He-o9D" firstAttribute="centerX" secondItem="d0F-Sd-gUS" secondAttribute="centerX" id="M7Q-Ja-vXn"/>
-                                    <constraint firstItem="nwe-He-o9D" firstAttribute="height" secondItem="d0F-Sd-gUS" secondAttribute="height" id="mQB-O3-wGJ"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyU-L0-z7R">
-                                <rect key="frame" x="36" y="260" width="90" height="30"/>
-                                <color key="backgroundColor" red="0.46274509803921571" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="0Y7-N4-Hvi"/>
-                                    <constraint firstAttribute="height" constant="30" id="KTJ-Jg-e9b"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" title="Join Game"/>
-                                <connections>
-                                    <action selector="joinGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXB-tc-niO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-OR-iQ6">
-                                <rect key="frame" x="36" y="305" width="200" height="30"/>
-                                <color key="backgroundColor" red="0.46274509803921571" green="0.49411764705882355" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="XGO-au-JbG"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" title="Create Game"/>
-                                <connections>
-                                    <action selector="createGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgY-P9-Ycn"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul een naam in" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-C9-tj3">
-                                <rect key="frame" x="170" y="214" width="152" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GD5-E4-Xcl"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="dPD-BZ-RPl"/>
-                                    <constraint firstAttribute="width" constant="152" id="gwO-Hl-JOl"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GeP-4k-P8B">
-                                <rect key="frame" x="177" y="324" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="2DY-C8-mQw"/>
-                                    <constraint firstAttribute="height" constant="20" id="7ZT-2H-qhD"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="top" secondItem="jyU-L0-z7R" secondAttribute="bottom" constant="15" id="0t4-ws-uz7"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="17E-Pm-IDL"/>
-                            <constraint firstItem="GeP-4k-P8B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ez-mh-mMK"/>
-                            <constraint firstItem="d0F-Sd-gUS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6lm-aY-A3E"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="top" secondItem="sTo-C9-tj3" secondAttribute="bottom" constant="16" id="BHg-zK-erf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uzh-OR-iQ6" secondAttribute="trailing" constant="20" id="IOR-z8-ZPh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jyU-L0-z7R" secondAttribute="trailing" constant="20" id="ViK-J2-Bfo"/>
-                            <constraint firstItem="GeP-4k-P8B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xku-5b-rAb"/>
-                            <constraint firstItem="jyU-L0-z7R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="blP-pl-PrJ"/>
-                            <constraint firstAttribute="trailing" secondItem="d0F-Sd-gUS" secondAttribute="trailing" id="hYr-zV-MHr"/>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kKQ-oI-JB8"/>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="mEn-8B-yLM"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pga-0I-fy3"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="top" secondItem="d0F-Sd-gUS" secondAttribute="bottom" constant="31" id="rpb-N1-6Cb"/>
-                            <constraint firstItem="sTo-C9-tj3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="58" id="tmM-YW-ycA"/>
-                            <constraint firstItem="uzh-OR-iQ6" firstAttribute="height" secondItem="jyU-L0-z7R" secondAttribute="height" id="w0n-Ly-cfG"/>
-                            <constraint firstItem="d0F-Sd-gUS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xor-Su-lXx"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="CreateButton" destination="uzh-OR-iQ6" id="rcU-OK-moD"/>
-                        <outlet property="JoinButton" destination="jyU-L0-z7R" id="HVo-H1-Sst"/>
-                        <outlet property="indicator" destination="GeP-4k-P8B" id="EIT-lu-lnI"/>
-                        <outlet property="inputName" destination="sTo-C9-tj3" id="plf-83-dhr"/>
+                        <outlet property="createGameButton" destination="uzh-OR-iQ6" id="rcU-OK-moD"/>
+                        <outlet property="joinGameButton" destination="jyU-L0-z7R" id="aRF-YW-44g"/>
+                        <outlet property="mainIndicator" destination="GeP-4k-P8B" id="EIT-lu-lnI"/>
+                        <outlet property="usernameField" destination="sTo-C9-tj3" id="plf-83-dhr"/>
                         <segue destination="62m-5U-dfa" kind="show" identifier="adminSegue" id="HEG-1o-5e6"/>
                         <segue destination="1x8-qw-zN6" kind="show" identifier="playerSegue" id="PXb-N9-tQb"/>
                     </connections>
@@ -153,29 +116,29 @@
             </objects>
             <point key="canvasLocation" x="-919.20000000000005" y="141.67916041979012"/>
         </scene>
-        <!--Item-->
+        <!--Sources-->
         <scene sceneID="czf-60-N9S">
             <objects>
-                <collectionViewController id="WQm-XW-lq9" customClass="SourcesVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="WQm-XW-lq9" userLabel="Sources" customClass="SourcesVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="tB1-8v-MPN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="a35-tm-vVG">
                             <size key="itemSize" width="140" height="159"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="0.0" height="22"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagecell" id="JDU-Zx-PeM" customClass="ImgCell" customModule="Mundus_ios" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="140" height="159"/>
+                                <rect key="frame" x="8" y="30" width="140" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file-page2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ku-Vg-3MZ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file-page2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ku-Vg-3MZ" userLabel="sourceImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="159"/>
                                         </imageView>
                                     </subviews>
@@ -189,10 +152,14 @@
                                     <constraint firstItem="8Ku-Vg-3MZ" firstAttribute="top" secondItem="JDU-Zx-PeM" secondAttribute="top" id="vqU-GQ-gQr"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="img" destination="8Ku-Vg-3MZ" id="YDz-NN-dci"/>
+                                    <outlet property="sourceImageView" destination="8Ku-Vg-3MZ" id="lh7-2m-iXh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCell" id="g3Z-Mb-yEA">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="WQm-XW-lq9" id="3LU-NG-vy1"/>
                             <outlet property="delegate" destination="WQm-XW-lq9" id="ckr-n5-B6k"/>
@@ -225,7 +192,9 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-L5-xLl">
                                         <rect key="frame" x="10" y="10" width="313" height="267"/>
                                         <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <string key="text">Millions of kilometres from Earth, the spaceship Explora is speeding through the universe. â€¨â€¨It is quiet on board. 
+                                        <string key="text">Millions of kilometres from Earth, the spaceship Explora is speeding through the universe. 
+
+It is quiet on board. 
 
 The three passengers are asleep. Suddenly, a bell starts to ring in the control room. A text appears on one of the computer screens: â€˜planet_in_sightâ€™.
 
@@ -352,7 +321,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-dc-zJh">
-                                <rect key="frame" x="155.5" y="332" width="63" height="28"/>
+                                <rect key="frame" x="156" y="332" width="63" height="28"/>
                                 <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Skip &gt;&gt;">
@@ -412,20 +381,21 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
             </objects>
             <point key="canvasLocation" x="-919" y="-744"/>
         </scene>
-        <!--Item-->
+        <!--User Questions-->
         <scene sceneID="98d-f0-Zek">
             <objects>
-                <tableViewController id="6dR-S7-f1S" customClass="UserQuestionVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6dR-S7-f1S" userLabel="User Questions" customClass="UserQuestionVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CMU-Js-DlH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TbM-7T-rug">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserQuestion" id="doP-gv-7LJ">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TbM-7T-rug" id="ZtD-3G-tKp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="doP-gv-7LJ" id="IyA-bO-zsQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -441,25 +411,26 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
             </objects>
             <point key="canvasLocation" x="12" y="-753"/>
         </scene>
-        <!--lol-->
+        <!--Session Players-->
         <scene sceneID="c1d-ad-f6A">
             <objects>
-                <tableViewController title="lol" id="PfQ-6z-iTU" customClass="SessionPlayersTVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="lol" id="PfQ-6z-iTU" userLabel="Session Players" customClass="SessionPlayersTVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2kE-nE-hz3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Puv-5i-hSl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SessionPlayer" id="Xef-k2-Iey">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Puv-5i-hSl" id="DK0-7k-Sbd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xef-k2-Iey" id="AE0-2H-lfv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="PfQ-6z-iTU" id="up8-U6-xZk"/>
                             <outlet property="delegate" destination="PfQ-6z-iTU" id="hTu-fA-y5H"/>
@@ -491,20 +462,20 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
             </objects>
             <point key="canvasLocation" x="-919" y="1241"/>
         </scene>
-        <!--Item-->
+        <!--Admin Questions-->
         <scene sceneID="sHV-k5-WTJ">
             <objects>
-                <tableViewController id="kot-mA-lYA" customClass="AdminQuestionsVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kot-mA-lYA" userLabel="Admin Questions" customClass="AdminQuestionsVC" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lIy-uc-IJy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oPT-EX-dcN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminQuestion" id="Au0-sS-tgi">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oPT-EX-dcN" id="qBd-fl-Kjz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Au0-sS-tgi" id="zYk-JY-tj3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -520,10 +491,10 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
             </objects>
             <point key="canvasLocation" x="1423" y="977"/>
         </scene>
-        <!--Item-->
+        <!--Dashboard-->
         <scene sceneID="Qil-Yc-gRs">
             <objects>
-                <viewController id="leO-Fe-8AC" customClass="AdminDashBoard" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="leO-Fe-8AC" userLabel="Dashboard" customClass="AdminDashBoard" customModule="Mundus_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IT3-k8-LLV"/>
                         <viewControllerLayoutGuide type="bottom" id="Fqv-TN-Bll"/>
@@ -532,8 +503,9 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightwood" translatesAutoresizingMaskIntoConstraints="NO" id="OK6-oc-WVO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightwood" translatesAutoresizingMaskIntoConstraints="NO" id="OK6-oc-WVO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajr-dl-aIo" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
                                 <rect key="frame" x="20" y="50" width="335" height="100"/>
@@ -547,7 +519,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stephan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-3U-zVb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-3U-zVb">
                                         <rect key="frame" x="172.5" y="10" width="152.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="qB7-aF-gzA"/>
@@ -556,7 +528,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player join token: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-Je-QsY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Token:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-Je-QsY">
                                         <rect key="frame" x="10" y="40" width="152.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="jgS-uE-P3P"/>
@@ -565,7 +537,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DF4D8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-N4-D5k">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-N4-D5k">
                                         <rect key="frame" x="172.5" y="40" width="152.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="u05-C6-Pad"/>
@@ -574,7 +546,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin join token:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pG-CL-5g9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moderator Token:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pG-CL-5g9">
                                         <rect key="frame" x="10" y="70" width="152.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="WD8-VC-rUe"/>
@@ -583,7 +555,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJ#7X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-xD-cAG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-xD-cAG">
                                         <rect key="frame" x="172.5" y="70" width="152.5" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="hzE-N7-e1D"/>
@@ -617,11 +589,13 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                     <constraint firstItem="RC4-Je-QsY" firstAttribute="top" secondItem="3qO-2j-GII" secondAttribute="bottom" constant="10" id="zK4-5O-IIJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="file-page1" translatesAutoresizingMaskIntoConstraints="NO" id="43r-eS-tEu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="file-page1" translatesAutoresizingMaskIntoConstraints="NO" id="43r-eS-tEu">
                                 <rect key="frame" x="26" y="338" width="323" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-8C-tWi">
-                                <rect key="frame" x="161.5" y="182" width="52" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-8C-tWi">
+                                <rect key="frame" x="99" y="182" width="175" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.72007614170000001" blue="0.1896825831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -630,8 +604,9 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                     <action selector="changeStateClicked:" destination="leO-Fe-8AC" eventType="touchUpInside" id="DG0-dC-v25"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-le-Nts">
-                                <rect key="frame" x="160" y="218" width="55" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-le-Nts">
+                                <rect key="frame" x="99" y="240" width="175" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90201735500000002" green="0.059020614710000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Delete">
@@ -645,22 +620,9 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="top" secondItem="vP2-ak-fpE" secondAttribute="top" constant="50" id="2LX-o6-iYt"/>
-                            <constraint firstItem="Fqv-TN-Bll" firstAttribute="top" secondItem="OK6-oc-WVO" secondAttribute="bottom" id="A2c-l1-6KS"/>
                             <constraint firstAttribute="trailing" secondItem="ajr-dl-aIo" secondAttribute="trailing" constant="20" id="KBA-cq-Nhf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="43r-eS-tEu" secondAttribute="trailing" constant="10" id="PTA-uw-1nd"/>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="UEq-hg-gFf"/>
-                            <constraint firstItem="rM8-le-Nts" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="VP6-as-gC6"/>
-                            <constraint firstItem="43r-eS-tEu" firstAttribute="leading" secondItem="vP2-ak-fpE" secondAttribute="leadingMargin" constant="10" id="e3l-lz-Q8I"/>
-                            <constraint firstItem="6DK-8C-tWi" firstAttribute="top" secondItem="ajr-dl-aIo" secondAttribute="bottom" constant="32" id="gAv-fF-9Mh"/>
-                            <constraint firstItem="Fqv-TN-Bll" firstAttribute="top" secondItem="43r-eS-tEu" secondAttribute="bottom" constant="10" id="gid-yc-clV"/>
                             <constraint firstItem="ajr-dl-aIo" firstAttribute="leading" secondItem="vP2-ak-fpE" secondAttribute="leading" constant="20" id="hI8-B9-8fZ"/>
-                            <constraint firstItem="43r-eS-tEu" firstAttribute="top" secondItem="rM8-le-Nts" secondAttribute="bottom" constant="92" id="kDC-F9-KgG"/>
-                            <constraint firstAttribute="trailing" secondItem="OK6-oc-WVO" secondAttribute="trailing" id="sgV-32-Dfi"/>
-                            <constraint firstItem="OK6-oc-WVO" firstAttribute="leading" secondItem="vP2-ak-fpE" secondAttribute="leading" id="uHQ-7z-MzF"/>
-                            <constraint firstItem="6DK-8C-tWi" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="wdp-Il-T1z"/>
-                            <constraint firstItem="OK6-oc-WVO" firstAttribute="top" secondItem="vP2-ak-fpE" secondAttribute="top" id="xFr-iu-zy4"/>
-                            <constraint firstItem="43r-eS-tEu" firstAttribute="centerX" secondItem="vP2-ak-fpE" secondAttribute="centerX" id="xW5-Zo-k6I"/>
-                            <constraint firstItem="rM8-le-Nts" firstAttribute="top" secondItem="6DK-8C-tWi" secondAttribute="bottom" constant="8" id="yrJ-Bm-229"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="sE0-Xl-ZRT"/>
@@ -681,11 +643,13 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
         <image name="file-page1" width="3508" height="2480"/>
         <image name="file-page2" width="3508" height="2480"/>
         <image name="lightwood" width="1350" height="1858"/>
-        <image name="logo_mundus" width="550" height="366"/>
+        <image name="mundus_logo" width="857" height="356"/>
         <image name="screen1" width="691" height="926"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LIa-Fm-34B"/>
-        <segue reference="Pqx-XK-h8V"/>
+        <segue reference="VE7-QA-Mv2"/>
+        <segue reference="O2a-bY-2Qk"/>
+        <segue reference="wIs-gr-usS"/>
+        <segue reference="RZ9-tM-ftD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,44 +2,39 @@
 //  AdminQuestionsVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 02/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 02/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
-import Starscream
 import Aldo
 
+/// Data stored for an AdminQuestionCell.
 struct GroupCellData {
     let question: String!
     let answer: String!
     let correctAnswer: String!
 }
-class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, ReviewCallback {
+
+/// ViewController for the Admin question panel.
+class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
 
     var cellDataArrray = [GroupCellData]()
     var questions: NSMutableArray = NSMutableArray()
-    let socket = WebSocket(url: URL(string: "ws://expeditionmundus.herokuapp.com/subscribe/answer")!)
+    var socket: AldoWebSocket?
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
         print(response)
         if responseCode == 200 {
-            questions = (response.object(forKey: "answers") as! NSArray).mutableCopy() as! NSMutableArray
-            print(questions)
-            self.tableView.reloadData()
-//            if questions.count == 0 {
-//                print("heleaal nix")
-//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//                label.text             = "No questions need reviewing"
-//                label.textColor        = UIColor.black
-//                label.textAlignment    = .center
-//                let imageView : UIImageView =  UIImageView(image: UIImage(named: "lightwood"))
-//                tableView.backgroundView = label
-//                tableView.separatorStyle = .none
-//            } else {
-//                tableView.separatorStyle = .singleLine
-//                tableView.backgroundView = nil
-//            }
+            switch request {
+            case MundusRequestURI.REQUEST_GET_SUBMITTED.rawValue:
+                questions = (response.object(forKey: "answers") as! NSArray).mutableCopy() as! NSMutableArray
+                self.tableView.reloadData()
+                break
+            default:
+                refresh()
+                break
+            }
         }
     }
 
@@ -48,70 +43,49 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         tabBarItem = UITabBarItem(title: "Question feed", image: UIImage(named: "qfeed"), tag: 0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    func websocketDidConnect(socket: WebSocket) {
-        print("websocket is connected")
-    }
-
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        print("websocket is disconnected: \(error?.localizedDescription)")
-    }
-
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        if !text.isEmpty {
-            refresh()
-        }
-        print("got some text: \(text)")
-    }
-
-    func websocketDidReceiveData(socket: WebSocket, data: Data) {
-        print(data)
-        print("got some data: \(data.count)")
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
 
+    /// Sends a request to retrieve all submitted answers.
     func refresh() {
-        Requests.getSubmittedQuestions(callback: self)
+        Mundus.getSubmittedQuestions(callback: self)
     }
 
+    /// Changes the background of the panel and retreives the answers.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.separatorStyle = .none
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
-        tableView.allowsSelection = false;
-        Requests.getSubmittedQuestions(callback: self)
-        edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
 
-        let ID: String = UIDevice.current.identifierForVendor!.uuidString
-        let player: String = Aldo.getStoredSession()!.getPlayerID()
-        let authToken: String = Aldo.getStorage().object(forKey: Aldo.Keys.AUTH_TOKEN.rawValue) as! String
-        self.socket.delegate = self
+        tableView.allowsSelection = false
+        edgesForExtendedLayout = []
 
-        self.socket.headers["Authorization"] = "\(ID):\(authToken):\(player)"
+        refresh()
     }
 
+    /// Opens a WebSocket connection if possible when creating the view.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refresh()
-        self.socket.connect()
+        if socket == nil {
+            socket = Aldo.subscribe(path: "/subscribe/answer", callback: self)
+            return
+        }
+        socket!.connect()
     }
 
+    /// Closes a WebSocket connection if a connection was established.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.socket.disconnect()
+        if socket != nil {
+            self.socket!.disconnect()
+        }
     }
 
-
-    func onResponse(qId : String) {
+    func onReviewed(qId: String) {
         for i in 0...questions.count {
-            let id : String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
+            let id: String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
             if id == qId {
                 questions.removeObject(at: i)
                 self.tableView!.reloadData()
@@ -120,18 +94,20 @@ class AdminQuestionsVC: UITableViewController, WebSocketDelegate, Callback, Revi
         }
     }
 
+    /// Draws the submitted answers in the panel.
     override func tableView(_  tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
-        cell.delegate = self
+        cell.callback = self
 
-        cell.questionId.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String
-        cell.question.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String
-        cell.answer.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String
-        cell.correctAnswer.text = (questions[indexPath.item] as! NSDictionary).object(forKey: "correct_answer") as! String
+        cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String)
+        cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
+        cell.answer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String)
+        cell.correctAnswer.text = ((questions[indexPath.item] as! NSDictionary)
+            .object(forKey: "correct_answer") as! String)
         return cell
     }
 
-    override func tableView(_ tableView : UITableView, heightForRowAt indexPath : IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 358
     }
 

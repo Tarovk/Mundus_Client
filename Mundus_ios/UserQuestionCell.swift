@@ -2,14 +2,15 @@
 //  UserQuestionCell.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 11/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 11/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import Aldo
 import Alamofire
 
+/// ViewCell for a question in the user question panel.
 class UserQuestionCell: UITableViewCell, Callback {
 
     @IBOutlet weak var submitButton: UIButton!
@@ -24,47 +25,43 @@ class UserQuestionCell: UITableViewCell, Callback {
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
-        print(response)
         if responseCode == 200 {
             setUnderReview()
         }
     }
 
+    /// Changes the status of the question to declined.
     public func setDeclined() {
         indicatorLabel.backgroundColor = UIColor.red
         indicatorLabel.setTitle("Declined", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Submit new answer", for: UIControlState.normal)
+        submitButton.setTitle("Submit New Answer", for: UIControlState.normal)
         submitButton.isEnabled = true
         answer.isEditable = true
     }
 
+    /// Changes the status of the question to unanswered.
     public func setActive() {
         indicatorLabel.backgroundColor = UIColor.green
-        indicatorLabel.setTitle("Active", for: .normal)
+        indicatorLabel.setTitle("Not Answered", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Submit answer", for: UIControlState.normal)
+        submitButton.setTitle("Submit Answer", for: UIControlState.normal)
         submitButton.isEnabled = true
         answer.isEditable = true
     }
 
+    /// Changes the status of the question to under review.
     public func setUnderReview() {
         indicatorLabel.backgroundColor = UIColor.orange
-        indicatorLabel.setTitle("Being reviewed", for: .normal)
+        indicatorLabel.setTitle("Under Review", for: .normal)
         submitButton.backgroundColor = UIColor.gray
-        submitButton.setTitle("Under review", for: UIControlState.normal)
+        submitButton.setTitle("Under Review", for: UIControlState.normal)
         submitButton.isEnabled = false
         answer.isEditable = false
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    /// Sends the answer to the server running the Aldo Framework.
     @IBAction func buttonClicked(_ sender: Any) {
-        Requests.submitQuestion(callback: self, answer: answer.text,questionId: questionId)
+        Mundus.submitQuestion(callback: self, answer: answer.text, questionId: questionId)
     }
 }

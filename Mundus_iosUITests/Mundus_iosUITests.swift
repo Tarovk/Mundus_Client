@@ -16,9 +16,11 @@ class Mundus_iosUITests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+//        continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        let app = XCUIApplication()
+        app.launchArguments = ["MY_UI_TEST_MODE"]
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -28,9 +30,117 @@ class Mundus_iosUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreateGame() {
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("sasa")
+        app.buttons["Start Game"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Publications"].tap()
+        tabBarsQuery.buttons["Question feed"].tap()
+        tabBarsQuery.buttons["Sources"].tap()
+        
     }
+    
+    func testDeleteGame(){
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("dada")
+        app.buttons["Start Game"].tap()
+        app.buttons["Delete"].tap()
+        
+    }
+    
+    func testPauseGame() {
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("ddd")
+        app.buttons["Start Game"].tap()
+        
+        let pauseButton = app.buttons["Pause"]
+        pauseButton.tap()
+        pauseButton.tap()
+        pauseButton.tap()
+        pauseButton.tap()
+        
+    }
+    
+    func testGameNoName() {
+        
+        let app = XCUIApplication()
+        app.textFields["Enter a username"].tap()
+        
+        let startGameButton = app.buttons["Start Game"]
+        startGameButton.tap()
+        startGameButton.tap()
+        
+    }
+    
+    func testJoinNoName() {
+        XCUIDevice.shared().orientation = .portrait
+        
+        let joinGameButton = XCUIApplication().buttons["Join Game"]
+        joinGameButton.tap()
+        joinGameButton.tap()
+
+        
+    }
+    
+    func testJoinInvalidToken() {
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("fsfs")
+        
+        let joinGameButton = app.buttons["Join Game"]
+        joinGameButton.tap()
+        
+        let joinGameAlert = app.alerts["Join Game"]
+        let textField = joinGameAlert.collectionViews.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element
+        textField.tap()
+        
+        let okButton = joinGameAlert.buttons["OK"]
+        okButton.tap()
+        joinGameButton.tap()
+        textField.typeText("da")
+        okButton.tap()
+        enterAUsernameTextField.tap()
+        
+    }
+    
+    func testJoinValid() {
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let enterAUsernameTextField = app.textFields["Enter a username"]
+        enterAUsernameTextField.tap()
+        enterAUsernameTextField.typeText("sss")
+        app.buttons["Join Game"].tap()
+        
+        let joinGameAlert = app.alerts["Join Game"]
+        let textField = joinGameAlert.collectionViews.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element
+        textField.tap()
+        textField.typeText("49cc5")
+        joinGameAlert.buttons["OK"].tap()
+        enterAUsernameTextField.tap()
+        app.buttons["Skip >>"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Sources"].tap()
+        tabBarsQuery.buttons["My questions"].tap()
+
+            
+    }
+    
+    
     
 }

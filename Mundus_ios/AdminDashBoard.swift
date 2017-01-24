@@ -2,12 +2,13 @@
 //  AdminDashBoard.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 04/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 04/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
-import Aldo
 import UIKit
+import Aldo
 
+/// ViewController for the Admin dashboard.
 class AdminDashBoard: UIViewController, Callback {
     @IBOutlet weak var gameStateButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
@@ -18,12 +19,13 @@ class AdminDashBoard: UIViewController, Callback {
     override func viewDidLoad() {
         super.viewDidLoad()
         styleButton()
-        let session: AldoSession = Aldo.getStoredSession()!
-        username.text = session.getUsername()
-        userJoinToken.text =  session.getUserToken()
-        adminToken.text = session.getModToken()
+        let player: Player = Aldo.getPlayer()!
+        username.text = player.getUsername()
+        userJoinToken.text =  player.getSession().getUserToken()
+        adminToken.text = player.getSession().getModeratorToken()
     }
 
+    /// Changes the radius of the buttons in the panel.
     func styleButton() {
         deleteButton.layer.cornerRadius = 5
         gameStateButton.layer.cornerRadius = 5
@@ -34,41 +36,35 @@ class AdminDashBoard: UIViewController, Callback {
         tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "dashboard"), tag: 0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    /// Sends a request to change the status of the game depending
+    /// on the button tapped.
     @IBAction func changeStateClicked(_ sender: Any) {
         if gameStateButton.titleLabel!.text! == "Play" {
-            Aldo.changeSessionState(newState: AldoSession.State.PLAY, callback: self)
+            Aldo.changeSessionStatus(newStatus: Session.Status.PLAYING, callback: self)
         } else if gameStateButton.titleLabel!.text! == "Pause" {
-            Aldo.changeSessionState(newState: AldoSession.State.PAUSE, callback: self)
+            Aldo.changeSessionStatus(newStatus: Session.Status.PAUSED, callback: self)
         }
     }
 
+    /// Sends a request to delete the session.
     @IBAction func deleteClicked(_ sender: Any) {
         Aldo.deleteSession(callback: self)
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {
-        print(responseCode)
         if responseCode == 200 {
             switch request {
 
-            case Regex(pattern: AldoRequest.SESSION_STATE_PLAY.regex()):
+            case Regex(pattern: RequestURI.SESSION_STATE_PLAY.regex()):
                 gameStateButton.titleLabel!.text! = "Pause"
                 gameStateButton.backgroundColor = UIColor.orange
-                print("play worked")
                 break
 
-            case Regex(pattern: AldoRequest.SESSION_STATE_PAUSE.regex()):
+            case Regex(pattern: RequestURI.SESSION_STATE_PAUSE.regex()):
                 gameStateButton.titleLabel!.text! = "Play"
                 gameStateButton.backgroundColor = UIColor.green
-                print("pauze worked")
                 break
-            case Regex(pattern: AldoRequest.SESSION_DELETE.regex()):
-                print("delete done")
-                print(Aldo.hasSession())
+            case Regex(pattern: RequestURI.SESSION_DELETE.regex()):
                 self.dismiss(animated: true, completion: {})
             break
             default:

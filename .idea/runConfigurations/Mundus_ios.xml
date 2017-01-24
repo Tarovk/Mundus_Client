@@ -1,8 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Mundus_ios" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Mundus_ios" TARGET_NAME="Mundus_ios" CONFIG_NAME="Debug" SCHEME_NAME="Mundus_ios" RUN_TARGET_PROJECT_NAME="Mundus_ios" RUN_TARGET_NAME="Mundus_ios" MAKE_ACTIVE="TRUE">
-    <envs>
-      <env name="OS_ACTIVITY_MODE" value="disable" />
-    </envs>
-    <method />
-  </configuration>
-</component>

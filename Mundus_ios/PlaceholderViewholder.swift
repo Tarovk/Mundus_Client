@@ -1,8 +1,10 @@
 //
-// Created by Stephan on 11/01/2017.
-// Copyright (c) 2017 Stephan. All rights reserved.
+//  PlaceholderViewholder.swift
+//  Mundus_ios
 //
-
+// Created by Team Aldo on 11/01/2017.
+// Copyright (c) 2017 Team Aldo. All rights reserved.
+//
 
 import UIKit
 
@@ -95,11 +97,13 @@ open class PlaceholderTextView: UITextView {
     }
 
     private func updateConstraintsForPlaceholderLabel() {
-        var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
+        var newConstraints = NSLayoutConstraint.constraints(withVisualFormat:
+            "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
                 options: [],
                 metrics: nil,
                 views: ["placeholder": placeholderLabel])
-        newConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-(\(textContainerInset.top))-[placeholder]",
+        newConstraints += NSLayoutConstraint.constraints(withVisualFormat:
+            "V:|-(\(textContainerInset.top))-[placeholder]",
                 options: [],
                 metrics: nil,
                 views: ["placeholder": placeholderLabel])
@@ -110,7 +114,8 @@ open class PlaceholderTextView: UITextView {
                 toItem: self,
                 attribute: .width,
                 multiplier: 1.0,
-                constant: -(textContainerInset.left + textContainerInset.right + textContainer.lineFragmentPadding * 2.0)
+                constant: -(textContainerInset.left + textContainerInset.right
+                    + textContainer.lineFragmentPadding * 2.0)
         ))
         removeConstraints(placeholderLabelConstraints)
         addConstraints(newConstraints)

@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3C15EA1E37F1990086413E /* Mundus_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9309F1E083569000D7EF1 /* Mundus_iosTests.swift */; };
 		52491BAC1E1D2CE10003B2E9 /* SessionPlayersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52491BAB1E1D2CE10003B2E9 /* SessionPlayersTVC.swift */; };
 		527F995D1E1DD35600A04EF5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F995C1E1DD35600A04EF5 /* CardView.swift */; };
 		527F995F1E1EDC7300A04EF5 /* SourcesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F995E1E1EDC7300A04EF5 /* SourcesVC.swift */; };
-		527F99611E1EFA6000A04EF5 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F99601E1EFA6000A04EF5 /* CustomSegue.swift */; };
 		52D9308B1E083569000D7EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9308A1E083569000D7EF1 /* AppDelegate.swift */; };
 		52D9308D1E083569000D7EF1 /* GameSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9308C1E083569000D7EF1 /* GameSetupVC.swift */; };
 		52D930901E083569000D7EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D9308E1E083569000D7EF1 /* Main.storyboard */; };
 		52D930921E083569000D7EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D930911E083569000D7EF1 /* Assets.xcassets */; };
 		52D930951E083569000D7EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D930931E083569000D7EF1 /* LaunchScreen.storyboard */; };
-		52D930A01E083569000D7EF1 /* Mundus_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9309F1E083569000D7EF1 /* Mundus_iosTests.swift */; };
 		52D930AB1E083569000D7EF1 /* Mundus_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D930AA1E083569000D7EF1 /* Mundus_iosUITests.swift */; };
 		6122B034291661639D8929FB /* TokenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122BACC93790BADB745A7AD /* TokenVC.swift */; };
-		6122B1FC85A8ABF4AF271A96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B7B89AFDBE69566E061B /* Constants.swift */; };
-		6122B2B8C4F698A3060250B9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B3FD6C33B88020F85C82 /* Requests.swift */; };
+		6122B2B8C4F698A3060250B9 /* Mundus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B3FD6C33B88020F85C82 /* Mundus.swift */; };
 		6122B303F2656E16B15AAD78 /* UserQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B30597EBB59FE18BE2CF /* UserQuestionVC.swift */; };
 		6122B3EFCFDFDD2BA503FFAF /* UserQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6122B23A3CEEC9CE9691B349 /* UserQuestionCell.xib */; };
 		6122B65C62E52BD91EFFA7DD /* SessionPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6122B5FBAA39C44FF034BC88 /* SessionPlayerCell.xib */; };
@@ -64,7 +62,6 @@
 		52491BAB1E1D2CE10003B2E9 /* SessionPlayersTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPlayersTVC.swift; sourceTree = "<group>"; };
 		527F995C1E1DD35600A04EF5 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		527F995E1E1EDC7300A04EF5 /* SourcesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcesVC.swift; sourceTree = "<group>"; };
-		527F99601E1EFA6000A04EF5 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		52D930871E083568000D7EF1 /* Mundus_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mundus_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D9308A1E083569000D7EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D9308C1E083569000D7EF1 /* GameSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupVC.swift; sourceTree = "<group>"; };
@@ -81,13 +78,12 @@
 		5500B6A8DA923EF0BDEA966A /* Pods-Mundus_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mundus_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mundus_iosTests/Pods-Mundus_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		6122B23A3CEEC9CE9691B349 /* UserQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserQuestionCell.xib; sourceTree = "<group>"; };
 		6122B30597EBB59FE18BE2CF /* UserQuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQuestionVC.swift; sourceTree = "<group>"; };
-		6122B3FD6C33B88020F85C82 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		6122B3FD6C33B88020F85C82 /* Mundus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mundus.swift; sourceTree = "<group>"; };
 		6122B5021B813FD758F64FFF /* AdminQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminQuestionCell.swift; sourceTree = "<group>"; };
 		6122B5FBAA39C44FF034BC88 /* SessionPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionPlayerCell.xib; sourceTree = "<group>"; };
 		6122B64A295A195BDEBC18C1 /* SessionPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionPlayerCell.swift; sourceTree = "<group>"; };
 		6122B6A6135493CD82BE71DF /* ImgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCell.swift; sourceTree = "<group>"; };
 		6122B6F43BA90C943C5223AD /* AdminQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminQuestionCell.xib; sourceTree = "<group>"; };
-		6122B7B89AFDBE69566E061B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6122B9090958C537A8DEF819 /* AdminQuestionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminQuestionsVC.swift; sourceTree = "<group>"; };
 		6122B9B5A3D017B1D6AA7E5C /* AdminDashBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDashBoard.swift; sourceTree = "<group>"; };
 		6122BACC93790BADB745A7AD /* TokenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenVC.swift; sourceTree = "<group>"; };
@@ -133,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F6DC55E1E37CF8D00277A7A /* mundus */ = {
+			isa = PBXGroup;
+			children = (
+				6122B3FD6C33B88020F85C82 /* Mundus.swift */,
+				6122BED0BF8FFE73281288AA /* ReviewCallback.swift */,
+			);
+			name = mundus;
+			sourceTree = "<group>";
+		};
 		51F7D1379CB381CB0BE9BC7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,24 +146,6 @@
 				2B91A05E0CBD0F415C3D578D /* Pods_Mundus_iosUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5249B20E1E093B9300A774FA /* http */ = {
-			isa = PBXGroup;
-			children = (
-				6122B3FD6C33B88020F85C82 /* Requests.swift */,
-			);
-			name = http;
-			sourceTree = "<group>";
-		};
-		5249B20F1E094CB900A774FA /* util */ = {
-			isa = PBXGroup;
-			children = (
-				6122B7B89AFDBE69566E061B /* Constants.swift */,
-				527F99601E1EFA6000A04EF5 /* CustomSegue.swift */,
-				6122BED0BF8FFE73281288AA /* ReviewCallback.swift */,
-			);
-			name = util;
 			sourceTree = "<group>";
 		};
 		52D9307E1E083568000D7EF1 = {
@@ -186,11 +173,8 @@
 		52D930891E083568000D7EF1 /* Mundus_ios */ = {
 			isa = PBXGroup;
 			children = (
-				5249B20F1E094CB900A774FA /* util */,
-				5249B20E1E093B9300A774FA /* http */,
-				52D930BB1E084ABE000D7EF1 /* controller */,
+				3F6DC55E1E37CF8D00277A7A /* mundus */,
 				52D930BA1E084ABA000D7EF1 /* view */,
-				52D930B91E084AB2000D7EF1 /* model */,
 				52D9308A1E083569000D7EF1 /* AppDelegate.swift */,
 				52D9308C1E083569000D7EF1 /* GameSetupVC.swift */,
 				52D9308E1E083569000D7EF1 /* Main.storyboard */,
@@ -226,13 +210,6 @@
 			path = Mundus_iosUITests;
 			sourceTree = "<group>";
 		};
-		52D930B91E084AB2000D7EF1 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
 		52D930BA1E084ABA000D7EF1 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,13 +226,6 @@
 				6122BBED709DFB6FAD80B13C /* PlaceholderViewholder.swift */,
 			);
 			name = view;
-			sourceTree = "<group>";
-		};
-		52D930BB1E084ABE000D7EF1 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = controller;
 			sourceTree = "<group>";
 		};
 		5FC53EB566E591E673B63FFD /* Pods */ = {
@@ -284,6 +254,7 @@
 				52D930851E083568000D7EF1 /* Resources */,
 				700533C4BA8263FD306EFC26 /* [CP] Embed Pods Frameworks */,
 				D6DC1FAA59F8C7A9A73A0734 /* [CP] Copy Pods Resources */,
+				3F377B8A1E35C395006DDEF3 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -348,7 +319,6 @@
 				TargetAttributes = {
 					52D930861E083568000D7EF1 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 74M6GDQR7C;
 						ProvisioningStyle = Automatic;
 					};
 					52D9309A1E083569000D7EF1 = {
@@ -358,7 +328,6 @@
 					};
 					52D930A51E083569000D7EF1 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = P2VATGQJ74;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 52D930861E083568000D7EF1;
 					};
@@ -445,6 +414,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mundus_iosUITests/Pods-Mundus_iosUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3F377B8A1E35C395006DDEF3 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		6C7A0CDE47BAA90037BBD193 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -560,9 +543,7 @@
 			files = (
 				52D9308D1E083569000D7EF1 /* GameSetupVC.swift in Sources */,
 				52D9308B1E083569000D7EF1 /* AppDelegate.swift in Sources */,
-				6122B1FC85A8ABF4AF271A96 /* Constants.swift in Sources */,
 				52491BAC1E1D2CE10003B2E9 /* SessionPlayersTVC.swift in Sources */,
-				527F99611E1EFA6000A04EF5 /* CustomSegue.swift in Sources */,
 				527F995D1E1DD35600A04EF5 /* CardView.swift in Sources */,
 				6122BCA5453ACAE1F8EC16DC /* AdminQuestionsVC.swift in Sources */,
 				527F995F1E1EDC7300A04EF5 /* SourcesVC.swift in Sources */,
@@ -571,7 +552,7 @@
 				6122BBFC7C6ADB4BE044CB90 /* SessionPlayerCell.swift in Sources */,
 				6122BC2B9151F41B5A24F431 /* AdminQuestionCell.swift in Sources */,
 				6122BD8CB98B1D76ECEF89DC /* ImgCell.swift in Sources */,
-				6122B2B8C4F698A3060250B9 /* Requests.swift in Sources */,
+				6122B2B8C4F698A3060250B9 /* Mundus.swift in Sources */,
 				6122B303F2656E16B15AAD78 /* UserQuestionVC.swift in Sources */,
 				6122BD71405B6FA9481B0FB1 /* PublicationCell.swift in Sources */,
 				6122BB13A5AA50DDAA97A1C6 /* UserQuestionCell.swift in Sources */,
@@ -585,7 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D930A01E083569000D7EF1 /* Mundus_iosTests.swift in Sources */,
+				3F3C15EA1E37F1990086413E /* Mundus_iosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +618,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -673,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -688,6 +670,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -718,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -731,13 +714,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F54018A36C9ADE82475AAB19 /* Pods-Mundus_ios.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 74M6GDQR7C;
+				DEVELOPMENT_TEAM = "";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Mundus_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -748,13 +732,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F82466C457ABA2D2DB4B881 /* Pods-Mundus_ios.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 74M6GDQR7C;
+				DEVELOPMENT_TEAM = "";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Mundus_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-3";
+				ON_DEMAND_RESOURCES_PREFETCH_ORDER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "Mundus-ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -774,7 +760,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.mundus.Mundus-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundus_ios.app/Mundus_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundus_ios.app/Mundus";
 			};
 			name = Debug;
 		};
@@ -791,7 +777,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.mundus.Mundus-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundus_ios.app/Mundus_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mundus_ios.app/Mundus";
 			};
 			name = Release;
 		};
@@ -800,7 +786,7 @@
 			baseConfigurationReference = 926502BEC3ECE13A8DECFFC2 /* Pods-Mundus_iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Mundus_iosUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -816,7 +802,7 @@
 			baseConfigurationReference = 8351758911D96C99E6507386 /* Pods-Mundus_iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = P2VATGQJ74;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Mundus_iosUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

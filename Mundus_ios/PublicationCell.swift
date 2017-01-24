@@ -2,13 +2,14 @@
 //  PublicationCell.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 10/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 10/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 
-class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegate{
+/// ViewCell for displaying a publication in the publication panel.
+class PublicationCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -33,22 +34,18 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
         return label
     }
 
-
     @IBOutlet weak var noPubs: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var pubTable: UITableView!
+
+    /// An array containing the publications.
     var publications: NSMutableArray = NSMutableArray() {
         didSet {
             pubTable.reloadData()
             noPubs.isHidden = publications.count > 0
         }
     }
-
-    var section = ["pizza", "deep dish pizza", "calzone"]
-
-    var items = [["Margarita", "BBQ Chicken", "Pepperoni"], ["sausage", "meat lovers", "veggie lovers"], ["sausage", "chicken pesto", "prawns", "mushrooms"]]
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -59,12 +56,14 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return (publications[section] as! NSDictionary).object(forKey: "question") as! String
+        return ((publications[section] as! NSDictionary).object(forKey: "question") as! String)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("SessionPlayerCell", owner: self)?.first as! SessionPlayerCell
-        cell.playerName.text = (publications[indexPath.section] as! NSDictionary).object(forKey: "correct_answer") as! String
+        let cell = Bundle.main.loadNibNamed("SessionPlayerCell", owner: self)?
+            .first as! SessionPlayerCell
+        cell.playerName.text = ((publications[indexPath.section] as! NSDictionary)
+            .object(forKey: "correct_answer") as! String)
         return cell
     }
 
@@ -72,12 +71,6 @@ class PublicationCell: UITableViewCell, UITableViewDataSource,UITableViewDelegat
         super.awakeFromNib()
         pubTable.dataSource = self
         noPubs.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 5)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

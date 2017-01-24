@@ -2,48 +2,48 @@
 //  AppDelegate.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 19/12/2016.
-//  Copyright © 2016 Stephan. All rights reserved.
+//  Created by Team Aldo on 19/12/2016.
+//  Copyright © 2016 Team Aldo. All rights reserved.
 //
 
 import UIKit
-import netfox
+import Aldo
 
+/**
+    Singleton containing methods that are called in the lifetime of the app.
+ */
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var isShowingSources: Bool = false
 
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("MY_UI_TEST_MODE") {
+            Aldo.getStorage().removeObject(forKey: Aldo.Keys.SESSION.rawValue)
+        }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        #if DEBUG
-        NFX.sharedInstance().start()
-        #endif
-
+        forcePortraitOrientation()
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    /// Forces the device to set the orientation to portrait.
+    func forcePortraitOrientation() {
+        let orientation = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(orientation, forKey: "orientation")
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    /// Forces the device to set the orientation to landscape.
+    func forceLandscapeOrientation() {
+        let orientation = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(orientation, forKey: "orientation")
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor
+        window: UIWindow?) -> UIInterfaceOrientationMask {
+        return isShowingSources ? UIInterfaceOrientationMask.landscapeLeft : UIInterfaceOrientationMask.portrait
     }
 
 }

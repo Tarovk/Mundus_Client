@@ -2,17 +2,18 @@
 //  Mp3VC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 11/01/2017.
-//  Copyright (c) 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 11/01/2017.
+//  Copyright (c) 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 import AudioToolbox
 
-class Mp3VC: UIViewController, AVAudioPlayerDelegate{
+/// ViewController for the information screen.
+class Mp3VC: UIViewController, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
-    var index : Int = 0
+    var index: Int = 0
 
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var textview: UITextView!
@@ -25,32 +26,32 @@ class Mp3VC: UIViewController, AVAudioPlayerDelegate{
         self.done()
     }
 
+    /// Starts the player dashboard.
     func done() {
         performSegue(withIdentifier: "playerTabs", sender: nil)
-        player!.stop()
+        if player != nil {
+            player!.stop()
+        }
     }
 
+    /// Starts the playback of the introduction audio.
     func playSound() {
-        let url = Bundle.main.url(forResource: "Mundus_introduction", withExtension: "mp3")!
+        if let audio = NSDataAsset(name: "Mundus_introduction") {
+            do {
+                player = try AVAudioPlayer(data: audio.data, fileTypeHint: AVFileTypeMPEGLayer3)
+                player!.delegate = self
+                guard let player = player else { return }
 
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player!.delegate = self
-            guard let player = player else { return }
-
-            player.prepareToPlay()
-            player.play()
-        } catch let error {
-            print(error.localizedDescription)
+                player.prepareToPlay()
+                player.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
 
     @IBAction func skipClicked(_ sender: Any) {
         self.done()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
