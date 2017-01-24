@@ -2,8 +2,8 @@
 //  SourcesVC.swift
 //  Mundus_ios
 //
-//  Created by Stephan on 05/01/2017.
-//  Copyright © 2017 Stephan. All rights reserved.
+//  Created by Team Aldo on 05/01/2017.
+//  Copyright © 2017 Team Aldo. All rights reserved.
 //
 
 import UIKit
@@ -24,9 +24,6 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         let layout = collectionViewLayout as!UICollectionViewFlowLayout
         self.collectionView!.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
         layout.itemSize = CGSize(width: width  * sqrt(2.0), height: width)
-
-//        let adjustForTabbarInsets: UIEdgeInsets = 
-//        UIEdgeInsetsMake(self.tabBarController!.tabBar.frame.height, 0, 0, 0)
 
         edgesForExtendedLayout = []
         self.tabBarController!.tabBar.backgroundColor = UIColor.white
@@ -57,17 +54,8 @@ class SourcesVC: UICollectionViewController, SKPhotoBrowserDelegate {
         browser.delegate = self
     }
 
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return UIInterfaceOrientation.landscapeLeft
-    }
-
     override func numberOfSections(`in` collectionView: UICollectionView) -> Int {
         return 1
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
