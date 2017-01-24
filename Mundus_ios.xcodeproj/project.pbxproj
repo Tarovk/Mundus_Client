@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3C15EA1E37F1990086413E /* Mundus_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D9309F1E083569000D7EF1 /* Mundus_iosTests.swift */; };
 		52491BAC1E1D2CE10003B2E9 /* SessionPlayersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52491BAB1E1D2CE10003B2E9 /* SessionPlayersTVC.swift */; };
 		527F995D1E1DD35600A04EF5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F995C1E1DD35600A04EF5 /* CardView.swift */; };
 		527F995F1E1EDC7300A04EF5 /* SourcesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F995E1E1EDC7300A04EF5 /* SourcesVC.swift */; };
@@ -565,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3C15EA1E37F1990086413E /* Mundus_iosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
