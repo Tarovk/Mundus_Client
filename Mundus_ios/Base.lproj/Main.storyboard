@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-Sd-gUS">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-Sd-gUS" userLabel="loginView">
                                 <rect key="frame" x="12" y="160" width="350" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -99,6 +99,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,6 +109,7 @@
                     <connections>
                         <outlet property="createGameButton" destination="uzh-OR-iQ6" id="rcU-OK-moD"/>
                         <outlet property="joinGameButton" destination="jyU-L0-z7R" id="aRF-YW-44g"/>
+                        <outlet property="loginView" destination="d0F-Sd-gUS" id="f9B-n7-KCX"/>
                         <outlet property="mainIndicator" destination="GeP-4k-P8B" id="EIT-lu-lnI"/>
                         <outlet property="usernameField" destination="sTo-C9-tj3" id="plf-83-dhr"/>
                         <segue destination="62m-5U-dfa" kind="show" identifier="adminSegue" id="HEG-1o-5e6"/>
@@ -307,7 +311,6 @@ The creatures make a sign with their  ngers â€“ a sort of trian- gle. Sara caref
 Nothing happens. The crea- tures stop a short distance away.
  
 Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€™</string>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -325,7 +328,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <color key="backgroundColor" red="0.94947652279999994" green="0.86061723469999996" blue="0.59403937039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Skip &gt;&gt;">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="skipClicked:" destination="1x8-qw-zN6" eventType="touchUpInside" id="0nH-Tm-gdV"/>
@@ -395,7 +398,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="doP-gv-7LJ" id="IyA-bO-zsQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -425,7 +428,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xef-k2-Iey" id="AE0-2H-lfv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -475,7 +478,7 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Au0-sS-tgi" id="zYk-JY-tj3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -647,9 +650,9 @@ Then one of them steps forward and says to Sara â€˜Yanna Mundion. Apa lo bozo?â€
         <image name="screen1" width="691" height="926"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VE7-QA-Mv2"/>
-        <segue reference="O2a-bY-2Qk"/>
-        <segue reference="wIs-gr-usS"/>
+        <segue reference="GaN-HH-TYa"/>
+        <segue reference="HEG-1o-5e6"/>
         <segue reference="RZ9-tM-ftD"/>
+        <segue reference="wIs-gr-usS"/>
     </inferredMetricsTieBreakers>
 </document>

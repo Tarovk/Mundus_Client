@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAa-fi-PCn" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
-                        <rect key="frame" x="18" y="18" width="456" height="322"/>
+                        <rect key="frame" x="18" y="18" width="456" height="321"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groepje1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-hC-Pxa">
                                 <rect key="frame" x="378" y="10" width="68" height="21"/>
@@ -27,15 +27,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waarom zijn bananen krom?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG1-MK-met">
-                                <rect key="frame" x="10" y="10" width="436" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG1-MK-met">
+                                <rect key="frame" x="10" y="10" width="436" height="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-ZD-C4k">
-                                <rect key="frame" x="277" y="284" width="81" height="28"/>
+                                <rect key="frame" x="277" y="283" width="81" height="28"/>
                                 <color key="backgroundColor" red="0.90201735496520996" green="0.059020614711909475" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-GD-rbc" customClass="CardView" customModule="Mundus_ios" customModuleProvider="target">
-                                <rect key="frame" x="10" y="41" width="436" height="111"/>
+                                <rect key="frame" x="10" y="40" width="436" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingezonden antwoord:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-Xp-6do">
                                         <rect key="frame" x="10" y="10" width="180" height="21"/>
@@ -84,7 +84,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMy-I9-NAm">
-                                <rect key="frame" x="365" y="284" width="81" height="28"/>
+                                <rect key="frame" x="365" y="283" width="81" height="28"/>
                                 <color key="backgroundColor" red="0.16244309872575521" green="0.72336632013320923" blue="0.25357748311548828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -94,16 +94,19 @@
                                 </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXx-3U-Ptc">
-                                <rect key="frame" x="10" y="162" width="436" height="112"/>
+                                <rect key="frame" x="10" y="161" width="436" height="112"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Correct antwoord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI9-mz-4NB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct antwoord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI9-mz-4NB">
                                         <rect key="frame" x="10" y="10" width="416" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRx-iv-OnT">
-                                        <rect key="frame" x="10" y="41" width="416" height="60.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRx-iv-OnT">
+                                        <rect key="frame" x="10" y="41" width="416" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="8Ji-aE-Ivu"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -111,14 +114,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="iI9-mz-4NB" firstAttribute="top" secondItem="aXx-3U-Ptc" secondAttribute="top" constant="10" id="7kq-Tv-DVP"/>
-                                    <constraint firstAttribute="trailing" secondItem="iI9-mz-4NB" secondAttribute="trailing" constant="10" id="Bba-Ae-OX5"/>
-                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="top" secondItem="iI9-mz-4NB" secondAttribute="bottom" constant="10" id="E18-bG-WDc"/>
                                     <constraint firstAttribute="height" constant="111.5" id="IWF-79-6yc"/>
-                                    <constraint firstAttribute="trailing" secondItem="eRx-iv-OnT" secondAttribute="trailing" constant="10" id="N4a-lj-II4"/>
-                                    <constraint firstAttribute="bottom" secondItem="eRx-iv-OnT" secondAttribute="bottom" constant="10" id="bpx-nB-Wg3"/>
-                                    <constraint firstItem="iI9-mz-4NB" firstAttribute="leading" secondItem="aXx-3U-Ptc" secondAttribute="leading" constant="10" id="jBx-Tx-bM8"/>
-                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="leading" secondItem="aXx-3U-Ptc" secondAttribute="leading" constant="10" id="lo0-sb-a2D"/>
+                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="leading" secondItem="iI9-mz-4NB" secondAttribute="leading" id="OSP-0x-BTf"/>
+                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="leading" secondItem="aXx-3U-Ptc" secondAttribute="leading" constant="10" id="bZl-xT-c7O"/>
+                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="top" secondItem="iI9-mz-4NB" secondAttribute="bottom" constant="10" id="e3A-ou-MIp"/>
+                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="trailing" secondItem="iI9-mz-4NB" secondAttribute="trailing" id="kQH-K4-L4n"/>
+                                    <constraint firstItem="eRx-iv-OnT" firstAttribute="centerX" secondItem="aXx-3U-Ptc" secondAttribute="centerX" id="wFU-wD-lYP"/>
+                                    <constraint firstAttribute="bottom" secondItem="eRx-iv-OnT" secondAttribute="bottom" constant="10" id="z32-pf-zW7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -145,7 +147,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="ZAa-fi-PCn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="7pc-4B-Ujb"/>
                     <constraint firstItem="ZAa-fi-PCn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Tkq-Hi-nUi"/>
@@ -153,7 +154,6 @@
                     <constraint firstAttribute="bottomMargin" secondItem="ZAa-fi-PCn" secondAttribute="bottom" constant="10" id="pBz-pi-fGX"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="answer" destination="KbP-2h-BMP" id="dBu-5z-yD8"/>
                 <outlet property="correctAnswer" destination="eRx-iv-OnT" id="Ygc-qu-Mol"/>

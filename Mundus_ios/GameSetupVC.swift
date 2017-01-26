@@ -13,10 +13,13 @@ import Toaster
 
 class GameSetupVC: UIViewController, Callback {
 
+    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var createGameButton: UIButton!
     @IBOutlet weak var joinGameButton: UIButton!
     @IBOutlet weak var mainIndicator: UIActivityIndicatorView!
+
+    private var loginViewOriginY: CGFloat = 0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,6 +41,30 @@ class GameSetupVC: UIViewController, Callback {
         super.viewDidLoad()
         self.joinGameButton.layer.cornerRadius = 5
         self.createGameButton.layer.cornerRadius = 5
+
+        self.loginViewOriginY = self.loginView.frame.origin.y
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    func keyboardWillShow(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.loginView.frame.origin.y == self.loginViewOriginY {
+                self.loginView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        if (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue != nil {
+            if self.loginView.frame.origin.y != 0 {
+                self.loginView.frame.origin.y = self.loginViewOriginY
+            }
+        }
     }
 
     func onResponse(request: String, responseCode: Int, response: NSDictionary) {

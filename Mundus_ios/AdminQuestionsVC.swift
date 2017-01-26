@@ -55,12 +55,11 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
     /// Changes the background of the panel and retreives the answers.
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView!.separatorStyle = .none
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "lightwood"))
-        self.tabBarController!.tabBar.backgroundColor = UIColor.white
 
-        tableView.allowsSelection = false
         edgesForExtendedLayout = []
+        self.tabBarController!.tabBar.backgroundColor = UIColor.white
+        self.tableView.allowsSelection = false
+        self.tableView!.separatorStyle = .none
 
         refresh()
     }
@@ -68,6 +67,12 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
     /// Opens a WebSocket connection if possible when creating the view.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        let backgroundImage = UIImageView(image: UIImage(named: "lightwood"))
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.layer.zPosition = -1
+        self.tableView.backgroundView = backgroundImage
+
         if socket == nil {
             socket = Aldo.subscribe(path: "/subscribe/answer", callback: self)
             return
@@ -85,7 +90,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
 
     func onReviewed(qId: String) {
         for i in 0...questions.count {
-            let id: String = (questions[i] as! NSDictionary).object(forKey: "question_id") as! String
+            let id: String = (questions[i] as! NSDictionary).object(forKey: "questionID") as! String
             if id == qId {
                 questions.removeObject(at: i)
                 self.tableView!.reloadData()
@@ -99,7 +104,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
         cell.callback = self
 
-        cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question_id") as! String)
+        cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "questionID") as! String)
         cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
         cell.answer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String)
         cell.correctAnswer.text = ((questions[indexPath.item] as! NSDictionary)
