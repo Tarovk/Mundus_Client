@@ -11,7 +11,7 @@ import Aldo
 import Alamofire
 
 /// ViewCell for a question in the user question panel.
-class UserQuestionCell: UITableViewCell, Callback {
+class UserQuestionCell: UITableViewCell, UITextViewDelegate, Callback {
 
     @IBOutlet weak var submitButton: UIButton!
     var questionId = ""

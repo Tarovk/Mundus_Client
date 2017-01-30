@@ -11,7 +11,7 @@ import Alamofire
 import Aldo
 import Toaster
 
-class GameSetupVC: UIViewController, Callback {
+class GameSetupVC: UIViewController, UITextFieldDelegate, Callback {
 
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var usernameField: UITextField!
@@ -44,10 +44,24 @@ class GameSetupVC: UIViewController, Callback {
 
         self.loginViewOriginY = self.loginView.frame.origin.y
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.view.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(GameSetupVC.hideKeyboard)))
+
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                                   name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                                   name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func hideKeyboard() {
+        self.usernameField.resignFirstResponder()
     }
 
     func keyboardWillShow(notification: NSNotification) {

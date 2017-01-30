@@ -104,6 +104,7 @@ class AdminQuestionsVC: UITableViewController, Callback, ReviewCallback {
         let cell = Bundle.main.loadNibNamed("AdminQuestionCell", owner: self)?.first as! AdminQuestionCell
         cell.callback = self
 
+        cell.backgroundColor = .clear
         cell.questionId.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "questionID") as! String)
         cell.question.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "question") as! String)
         cell.answer.text = ((questions[indexPath.item] as! NSDictionary).object(forKey: "answer") as! String)

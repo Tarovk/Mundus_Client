@@ -48,9 +48,16 @@ class UserQuestionVC: UITableViewController, Callback {
         self.tableView.allowsSelection = false
         self.tableView!.separatorStyle = .none
 
+        self.view.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(UserQuestionVC.hideKeyboard)))
+
         initEmptyMessage()
         initRefreshControl()
         refresh()
+    }
+
+    func hideKeyboard() {
+        self.tableView.endEditing(true)
     }
 
     /// Sets the background of the panel.

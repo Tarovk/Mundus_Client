@@ -27,7 +27,7 @@ class TokenVC: UIViewController, Callback {
         SwiftSpinner.show("Failed to connect, tap to retry", animated: false)
             .addTapHandler({
                 self.retrieveToken()
-            }, subtitle: "Do you have internet connection?")
+            }, subtitle: "Do you have an internet connection?")
     }
 
     override func viewDidAppear(_ animated: Bool) {
